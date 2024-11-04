@@ -370,6 +370,40 @@
     }; // end ssMoveTo
 
 
+    // Language switching functionality
+    function toggleLanguage() {
+        const btn = document.querySelector('.lang-btn');
+        const currentLang = btn.getAttribute('data-active') || 'en';
+        const newLang = currentLang === 'en' ? 'jp' : 'en';
+        
+        // Update button state
+        btn.setAttribute('data-active', newLang);
+        
+        // Find all translatable elements
+        const elements = document.querySelectorAll('[data-en][data-jp]');
+        
+        // Update text content based on selected language
+        elements.forEach(element => {
+            element.textContent = element.getAttribute(`data-${newLang}`);
+        });
+        
+        // Store language preference
+        localStorage.setItem('preferred-language', newLang);
+    }
+
+    // Initialize language on page load
+    document.addEventListener('DOMContentLoaded', () => {
+        const savedLang = localStorage.getItem('preferred-language');
+        if (savedLang) {
+            const btn = document.querySelector('.lang-btn');
+            btn.setAttribute('data-active', savedLang);
+            if (savedLang === 'jp') {
+                toggleLanguage();
+            }
+        }
+    });
+
+
    /* Initialize
     * ------------------------------------------------------ */
     (function ssInit() {

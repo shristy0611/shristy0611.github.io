@@ -1648,7 +1648,7 @@ dt {
 }
 
 dt strong {
-	color: var(--color-1);
+	color: var (--color-1);
 }
 
 dd {
@@ -4574,7 +4574,7 @@ td:last-child {
 	line-height  : var(--vspace-1);
 	color        : var(--color-1);
 	margin-left  : 0.2rem;
-	margin-bottom: var(--vspace-0_25);
+	margin-bottom: var (--vspace-0_25);
 }
 
 /* related post
@@ -4739,4 +4739,49 @@ td:last-child {
 
 .contact-list li {
 	padding-left: 0;
+}
+
+/* Language Switcher Styles */
+.language-switcher {
+    margin-right: 2rem;
+}
+
+.lang-btn {
+    background: transparent;
+    border: 1px solid var(--color-primary);
+    border-radius: 4px;
+    padding: 0.4rem 0.8rem;
+    font-size: 0.9rem;
+    cursor: pointer;
+    color: var(--color-text);
+    transition: all 0.3s ease;
+}
+
+.lang-btn:hover {
+    background: var(--color-primary);
+    color: white;
+}
+
+.current-lang {
+    font-weight: 600;
+}
+
+.divider {
+    margin: 0 0.3rem;
+    opacity: 0.5;
+}
+
+.other-lang {
+    opacity: 0.6;
+}
+
+/* Active language state */
+.lang-btn[data-active="jp"] .current-lang {
+    opacity: 0.6;
+    font-weight: normal;
+}
+
+.lang-btn[data-active="jp"] .other-lang {
+    opacity: 1;
+    font-weight: 600;
 }
