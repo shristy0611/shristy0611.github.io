@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="ja" class="no-js">
+<head>
+
+    <!--- basic page needs
+    ================================================== -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Shristyverse</title>
+
+    <script>
+        document.documentElement.classList.remove('no-js');
+        document.documentElement.classList.add('js');
+    </script>
+
+    <!-- CSS
+    ================================================== -->
+    <link rel="stylesheet" href="css/vendor.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        #particles-js {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1;
+        }
+        .s-intro__content-text, .s-intro__content-desc {
+            position: relative;
+            z-index: 2;
+        }
+        .coming-soon-btn {
+            display: inline-flex;
+            align-items: center;
+            padding: 1.2rem 2.4rem;
+            font-size: 2.2rem;
+            color: rgba(255, 255, 255, 0.9);
+            background: rgba(0, 242, 254, 0.1);
+            border: 1px solid rgba(0, 242, 254, 0.3);
+            border-radius: 8px;
+            cursor: default;
+            transition: all 0.3s ease;
+            gap: 0.8rem;
+        }
+        .coming-soon-badge {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 0.3rem 0.8rem;
+            border-radius: 4px;
+            font-size: 1.8rem;
+            color: #00f2fe;
+        }
+    </style>
+
+    <!-- favicons
+    ================================================== -->
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="images/logos/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="images/logos/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="site.webmanifest">
+
+</head>
+
+
+<body id="top">
+
+    
+    <!-- preloader
+    ================================================== -->
+    <div id="preloader">
+        <div id="loader" class="dots-fade">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+
+
+    <!-- page wrap
+    ================================================== -->
+    <div id="page" class="s-pagewrap ss-home">
+
+
+        <!-- # site header 
+        ================================================== -->
+        <header class="s-header" style="position: fixed; top: 0; width: 100%; background-image: linear-gradient(to bottom, rgba(0,0,0,0.9), rgba(0,0,0,0.9));">
+            <div class="row s-header__inner width-sixteen-col">
+                <div class="s-header__block">
+                    <div class="s-header__logo">
+                        <a class="logo" href="index_ja.html">
+                            <img src="images/logo.svg" alt="ホームページ">
+                        </a>
+                    </div>
+
+                    <a class="s-header__menu-toggle" href="#0"><span>Menu</span></a>
+                </div> <!-- end s-header__block -->
+                <nav class="s-header__nav">
+                    <ul class="flex space-x-1 md:space-x-4 text-sm font-medium">
+                        <li><a href="#web_development" class="text-gray-300 hover:text-white transition-colors duration-200">ウェブ開発</a></li>
+                        <li><a href="#ai_solutions" class="text-gray-300 hover:text-white transition-colors duration-200">AIソリューション</a></li>
+                        <li><a href="#about" class="text-gray-300 hover:text-white transition-colors duration-200">当社について</a></li>
+                        <li><a href="#contact" class="text-gray-300 hover:text-white transition-colors duration-200">お問い合わせ</a></li>
+                        <li><a href="index.html" class="text-gray-300 hover:text-white transition-colors duration-200">ENGLISH</a></li>
+                    </ul>
+                </nav> <!-- end s-header__nav -->
+            </div> <!-- end s-header__inner -->
+        </header> <!-- end s-header -->
+
+        <!-- # site main content
+        ================================================== -->
+        <section id="content" class="s-content">
+
+            <!-- intro
+            ----------------------------------------------- -->
+            <section id="intro" class="s-intro" style="background-image: linear-gradient(to bottom, rgba(0,0,0,0.9), rgba(0,0,0,0.9)); display: flex; justify-content: center; align-items: center; position: relative;">
+                <div id="particles-js"></div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="s-intro__content-text" style="text-align: center; color: white; transition: all 0.4s ease-in-out;">
+                                <h1 class="s-intro__content-title" style="font-size: clamp(4rem, 10vw, 8rem); transition: all 0.4s ease-in-out;">
+                                    デジタル領域での貴社の存在感を強化
+                                </h1>
+                            </div> <!-- s-intro__content-text -->
+                            <div class="s-intro__content-desc" style="font-size: clamp(2rem, 5vw, 3rem); color: rgba(255, 255, 255, 0.7); text-align: center;">
+                                <p>Shristyverseでは、貴社の独自ニーズに合わせた高品質なウェブ開発と最先端のAIソリューションを専門的にご提供しております。新たな価値を共に創出してまいりましょう。</p>
+                            </div> <!-- s-intro__content-desc -->
+                        </div>
+                    </div>
+                </div>
+            </section> <!-- end s-intro -->
+
+            <!-- web development
+            ----------------------------------------------- -->
+            <section id="web_development" class="s-web-development target-section" style="background-color: #fff5eb;">
+                <div class="row s-web-development__content width-sixteen-col">
+                    <div class="column grid-block grid-section-split">
+                        <img src="images/web_development_bg.svg" alt="" class="s-web-development__content-imgbg">
+                        <div class="section-header grid-section-split__header">
+                            <div class="text-pretitle">ウェブ開発</div>
+                            <h2 class="text-display-title">
+                            高品質でレスポンシブ、<br>
+                            拡張性に富んだ<br>
+                            ウェブアプリケーション<br>
+                            構築のパートナー
+                            </h2>
+                            <div class="s-web-development__content-btn">
+                                <a href="web_development_ja.html" class="btn btn--primary u-fullwidth">ウェブ開発について詳しく</a>
+                            </div>
+                        </div> <!-- end section-header -->
+                        <div class="s-web-development__content-main grid-section-split__primary" style="background-color: rgba(255, 245, 235, 0.8);">
+                            <p class="attention-getter">
+                            当社は経験豊富なウェブ開発者チームとして、貴社のビジネスニーズを満たす高品質なウェブアプリケーションの提供に注力しています。レスポンシブで拡張性が高く、セキュリティに優れたアプリケーションを通じ、卓越したユーザー体験を実現します。
+                            </p>
+                            <p class="attention-getter">
+                            私たちはセマンティックなHTML、CSSプリプロセッサー、React・Angular・VueなどのJavaScriptフレームワークを活用し、ベストプラクティスに基づいて開発を進めます。また、WCAG 2.1に準拠したアクセシビリティとユーザビリティを重視し、すべてのユーザーに配慮したウェブ環境を整えています。
+                            </p>
+                            <p class="attention-getter">
+                            お客様の事業目標を深く理解し、それを的確に反映したカスタムソリューションをご提供できることを誇りとしています。貴社の要件を綿密に把握し、その期待を上回るウェブ開発ソリューションを共に築き上げましょう。
+                            </p>
+                        </div> <!-- end s-web-development__content-main -->
+                    </div> <!-- content-inner -->
+                </div>
+            </section> <!-- end s-web-development -->
+
+            <!-- AI Solutions
+            ----------------------------------------------- -->
+            <section id="ai_solutions" class="s-ai-solutions target-section" style="background-color: rgba(0,0,0,0.9); color: white;">
+                <div class="row s-ai-solutions__content width-sixteen-col">
+                    <div class="column grid-block grid-section-split">
+                        <img src="images/ai_solutions_bg.svg" alt="" class="s-ai-solutions__content-imgbg">
+                        <div class="section-header grid-section-split__header">
+                            <div class="text-pretitle">AIソリューション</div>
+                            <h2 class="text-display-title" style="color: white;">
+                            最先端の人工知能で<br>貴社ビジネスを加速
+                            </h2>
+                            <div class="s-ai-solutions__content-btn">
+                                <span class="coming-soon-btn">
+                                    AI ソリューションを探る
+                                    <span class="coming-soon-badge">近日公開</span>
+                                </span>
+                            </div>
+                        </div> <!-- end section-header -->
+                        <div class="s-ai-solutions__content-main grid-section-split__primary">
+                            <p class="attention-getter" style="color: white;">
+                            当社はAI分野のパイオニアとして、あらゆる業界でビジネスを革新する先端的な人工知能ソリューションの開発・導入を得意としています。熟練のデータサイエンティストとAIエンジニアが、機械学習や深層学習の可能性を拡張し、新たな価値創造に挑戦します。
+                            </p>
+                            <p class="attention-getter" style="color: white;">
+                            自然言語処理、コンピュータビジョン、予測分析、自律型システムなど、多岐にわたるAIサービスをご提供しています。TensorFlow、PyTorch、クラウドベースのAIサービスなど、最新のフレームワークとテクノロジーを活用し、スケーラビリティとパフォーマンスを確保したソリューションを実現します。
+                            </p>
+                            <p class="attention-getter" style="color: white;">
+                            お客様固有の課題を的確に把握し、イノベーションを促進するAIソリューションをカスタムメイドでご提供いたします。現在の問題解決にとどまらず、将来のニーズを見据えた戦略的AI活用で、貴社に持続的な競合優位性をもたらします。
+                            </p>
+                            
+                        </div> <!-- end s-ai-solutions__content-main -->
+                    </div> <!-- content-inner -->
+                </div>
+            </section> <!-- end s-ai-solutions -->
+
+            <!-- about
+            ----------------------------------------------- -->
+            <section id="about" class="s-about target-section" style="background-color: #fff5eb;">
+                <div class="row s-about__content width-sixteen-col">
+                    <div class="column grid-block grid-section-split">
+                        <div class="section-header grid-section-split__header">
+                            <div class="text-pretitle">当社について</div>
+                            <h2 class="text-display-title" style="color: black;">
+                            あらゆる企業規模に<br>革新的テクノロジーを
+                            </h2>
+                            <div class="s-about__content-btn">
+                                <a href="#contact" class="btn btn--primary u-fullwidth">お問い合わせ</a>
+                            </div>
+                        </div> <!-- end section-header -->
+                        <div class="s-about__content-main grid-section-split__primary">
+                            <p class="attention-getter" style="color: black;">
+                            当社は、AIエンジニアとウェブ開発者に<br>よる専門チームとして、常に最先端技術の可能性を追求しています。「企業規模を問わず、すべてのお客様が最新のイノベーションを享受できるべきだ」という信念が私たちの原動力です。
+                            </p>
+                            <p class="attention-getter" style="color: black;">
+                            ローカルから中規模企業まで、先進的テクノロジーへのアクセスを幅広く提供することが当社の使命です。高品質なソリューションを適正な価格でご提供し、イノベーションが大企業だけの特権にならない環境を整えています。
+                            </p>
+                            <p class="attention-getter" style="color: black;">
+                            AIとウェブ開発の専門知識を、コストパフォーマンスに優れた形で組み合わせ、あらゆる企業が先端技術の恩恵を受けられるようサポートします。急速に変化するデジタル環境下で、貴社の競争力強化を私たちにお任せください。
+                            </p>
+                        </div> <!-- end s-about__content-main -->
+                    </div> <!-- content-inner -->
+                </div>
+            </section> <!-- end s-about -->
+
+            <!-- contact
+            ----------------------------------------------- -->
+            <section id="contact" class="s-contact target-section" style="background-color: rgba(0,0,0,0.9); color: white;">
+                <div class="row s-contact__content width-sixteen-col">
+                    <div class="column grid-block grid-section-split">
+                        <div class="section-header grid-section-split__header">
+                            <div class="text-pretitle">お問い合わせ</div>
+                            <h2 class="text-display-title" style="color: white;">
+                            共に、<br>圧倒的な価値を<br>創り出しましょう
+                            </h2>
+                        </div> <!-- end section-header -->
+                        <div class="s-contact__content-main grid-section-split__primary">
+                            <form id="contactForm" class="s-contact__form">
+                                <div class="form-field">
+                                    <input type="text" name="name" id="name" class="u-fullwidth" placeholder="お名前" required>
+                                </div>
+                                <div class="form-field">
+                                    <input type="email" name="email" id="email" class="u-fullwidth" placeholder="メールアドレス" required>
+                                </div>
+                                <div class="form-field">
+                                    <textarea name="message" id="message" class="u-fullwidth" placeholder="お問い合わせ内容" rows="6" required></textarea>
+                                </div>
+                                <form action="https://formspree.io/f/mqakolgv" method="POST">
+                                    <input type="hidden" name="_subject" value="New contact form submission">
+                                    <input type="hidden" name="_replyto" value="#email">
+                                    <input type="hidden" name="_cc" value="powdeljaishishristy@gmail.com">
+                                    <button type="submit" class="btn btn--primary u-fullwidth">送信</button>
+                                </form>
+                            </form>
+                        </div> <!-- end s-contact__content-main -->
+                    </div> <!-- content-inner -->
+                </div>
+            </section> <!-- end s-contact -->
+    </div> <!-- end page-wrap -->
+    <!-- Java Script
+    ================================================== -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        particlesJS('particles-js', {
+            particles: {
+                number: {
+                    value: 80,
+                    density: {
+                        enable: true,
+                        value_area: 800
+                    }
+                },
+                color: {
+                    value: '#ffffff'
+                },
+                shape: {
+                    type: 'circle'
+                },
+                opacity: {
+                    value: 0.5,
+                    random: false
+                },
+                size: {
+                    value: 3,
+                    random: true
+                },
+                line_linked: {
+                    enable: true,
+                    distance: 150,
+                    color: '#ffffff',
+                    opacity: 0.4,
+                    width: 1
+                },
+                move: {
+                    enable: true,
+                    speed: 2,
+                    direction: 'none',
+                    random: false,
+                    straight: false,
+                    out_mode: 'out',
+                    bounce: false
+                }
+            },
+            interactivity: {
+                detect_on: 'canvas',
+                events: {
+                    onhover: {
+                        enable: true,
+                        mode: 'grab'
+                    },
+                    onclick: {
+                        enable: true,
+                        mode: 'push'
+                    },
+                    resize: true
+                },
+                modes: {
+                    grab: {
+                        distance: 140,
+                        line_linked: {
+                            opacity: 1
+                        }
+                    },
+                    push: {
+                        particles_nb: 4
+                    }
+                }
+            },
+            retina_detect: true
+        });
+    </script>
+</body>
+</html>
