@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AI Solutions | Shristyverse</title>
+    <link rel="stylesheet" href="css/vendor.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .ai-solutions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 2rem;
+        }
+        .solution-item {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .solution-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+        .solution-icon {
+            width: 60px;
+            height: 60px;
+            margin: 2rem auto;
+            background: linear-gradient(45deg, #00f2fe, #4facfe);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .solution-content {
+            padding: 1.5rem;
+            color: white;
+            text-align: center;
+        }
+        .features-list {
+            text-align: left;
+            margin-top: 1rem;
+            padding-left: 1.5rem;
+        }
+        .features-list li {
+            margin-bottom: 0.5rem;
+            position: relative;
+        }
+        .features-list li::before {
+            content: "•";
+            color: #4facfe;
+            position: absolute;
+            left: -1rem;
+        }
+        .section-title {
+            text-align: center;
+            margin: 4rem 0;
+            color: white;
+        }
+        .solution-cta {
+            display: inline-block;
+            margin-top: 1.5rem;
+            padding: 0.75rem 1.5rem;
+            background: linear-gradient(45deg, #00f2fe, #4facfe);
+            border-radius: 25px;
+            color: white;
+            text-decoration: none;
+            transition: transform 0.3s ease;
+        }
+        .solution-cta:hover {
+            transform: scale(1.05);
+        }
+        body {
+            background: linear-gradient(135deg, #000000, #1a1a1a);
+        }
+    </style>
+</head>
+<body>
+    <header class="s-header" style="position: fixed; top: 0; width: 100%; background-image: linear-gradient(to bottom, rgba(0,0,0,0.9), rgba(0,0,0,0.9));">
+        <div class="row s-header__inner width-sixteen-col">
+            <div class="s-header__block">
+                <div class="s-header__logo">
+                    <a class="logo" href="index.html">
+                        <img src="images/logo.svg" alt="Homepage">
+                    </a>
+                </div>
+                <a class="s-header__menu-toggle" href="#0"><span>Menu</span></a>
+            </div>
+            <nav class="s-header__nav">
+                <ul class="flex space-x-1 md:space-x-4 text-sm font-medium">
+                    <li><a href="index.html#web_development" class="text-gray-300 hover:text-white transition-colors duration-200">Web Development</a></li>
+                    <li><a href="index.html#ai_solutions" class="text-gray-300 hover:text-white transition-colors duration-200">AI Solutions</a></li>
+                    <li><a href="index.html#about" class="text-gray-300 hover:text-white transition-colors duration-200">About Us</a></li>
+                    <li><a href="index.html#contact" class="text-gray-300 hover:text-white transition-colors duration-200">Contact</a></li>
+                    <li><a href="ai_solutions_ja.html" class="text-gray-300 hover:text-white transition-colors duration-200">日本語</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main style="padding-top: 80px;">
+        <div class="section-title">
+            <h1>AI Solutions</h1>
+            <p>Next-Generation AI Technologies for Your Business</p>
+        </div>
+
+        <div class="ai-solutions-grid">
+            <div class="solution-item">
+                <div class="solution-icon">
+                    <svg width="24" height="24" fill="white" viewBox="0 0 24 24">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm3.88-11.71L10 14.17l-1.88-1.88a.996.996 0 1 0-1.41 1.41l2.59 2.59c.39.39 1.02.39 1.41 0L17.3 9.7a.996.996 0 0 0 0-1.41c-.39-.39-1.03-.39-1.42 0z"/>
+                    </svg>
+                </div>
+                <div class="solution-content">
+                    <h3>Natural Language Processing</h3>
+                    <ul class="features-list">
+                        <li>Multilingual Text Analysis</li>
+                        <li>Sentiment Analysis</li>
+                        <li>Automated Content Generation</li>
+                        <li>Chatbot Integration</li>
+                    </ul>
+                    <a href="#contact" class="solution-cta">Learn More</a>
+                </div>
+            </div>
+
+            <div class="solution-item">
+                <div class="solution-icon">
+                    <svg width="24" height="24" fill="white" viewBox="0 0 24 24">
+                        <path d="M9 11.75c-.69 0-1.25.56-1.25 1.25s.56 1.25 1.25 1.25 1.25-.56 1.25-1.25-.56-1.25-1.25-1.25zm6 0c-.69 0-1.25.56-1.25 1.25s.56 1.25 1.25 1.25 1.25-.56 1.25-1.25-.56-1.25-1.25-1.25zM12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8 0-.29.02-.58.05-.86 2.36-1.05 4.23-2.98 5.21-5.37C11.07 8.33 14.05 10 17.42 10c.78 0 1.53-.09 2.25-.26.21.71.33 1.47.33 2.26 0 4.41-3.59 8-8 8z"/>
+                    </svg>
+                </div>
+                <div class="solution-content">
+                    <h3>Computer Vision</h3>
+                    <ul class="features-list">
+                        <li>Object Detection</li>
+                        <li>Facial Recognition</li>
+                        <li>Image Classification</li>
+                        <li>Video Analysis</li>
+                    </ul>
+                    <a href="#contact" class="solution-cta">Learn More</a>
+                </div>
+            </div>
+
+            <div class="solution-item">
+                <div class="solution-icon">
+                    <svg width="24" height="24" fill="white" viewBox="0 0 24 24">
+                        <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zm-7-2h2V7h-4v2h2z"/>
+                    </svg>
+                </div>
+                <div class="solution-content">
+                    <h3>Predictive Analytics</h3>
+                    <ul class="features-list">
+                        <li>Market Trend Analysis</li>
+                        <li>Risk Assessment</li>
+                        <li>Customer Behavior Prediction</li>
+                        <li>Real-time Analytics</li>
+                    </ul>
+                    <a href="#contact" class="solution-cta">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/plugins.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="ja" class="no-js" >
+<html lang="ja" class="no-js">
 <head>
 
     <!--- basic page needs
     ================================================== -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>My Portfolio</title>
+    <title>Shristyverse</title>
 
     <script>
         document.documentElement.classList.remove('no-js');
@@ -17,12 +17,46 @@
     ================================================== -->
     <link rel="stylesheet" href="css/vendor.css">
     <link rel="stylesheet" href="css/styles.css">
+    <style>
+        #particles-js {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1;
+        }
+        .s-intro__content-text, .s-intro__content-desc {
+            position: relative;
+            z-index: 2;
+        }
+        .coming-soon-btn {
+            display: inline-flex;
+            align-items: center;
+            padding: 1.2rem 2.4rem;
+            font-size: 2.2rem;
+            color: rgba(255, 255, 255, 0.9);
+            background: rgba(0, 242, 254, 0.1);
+            border: 1px solid rgba(0, 242, 254, 0.3);
+            border-radius: 8px;
+            cursor: default;
+            transition: all 0.3s ease;
+            gap: 0.8rem;
+        }
+        .coming-soon-badge {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 0.3rem 0.8rem;
+            border-radius: 4px;
+            font-size: 1.8rem;
+            color: #00f2fe;
+        }
+    </style>
 
     <!-- favicons
     ================================================== -->
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="icon" type="images/logos/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="images/logos/png" sizes="16x16" href="favicon-16x16.png">
     <link rel="manifest" href="site.webmanifest">
 
 </head>
@@ -49,40 +83,28 @@
 
         <!-- # site header 
         ================================================== -->
-        <header class="s-header">
-
+        <header class="s-header" style="position: fixed; top: 0; width: 100%; background-image: linear-gradient(to bottom, rgba(0,0,0,0.9), rgba(0,0,0,0.9));">
             <div class="row s-header__inner width-sixteen-col">
-
                 <div class="s-header__block">
                     <div class="s-header__logo">
                         <a class="logo" href="index_ja.html">
-                            <img src="images/logo.svg" alt="Homepage">
+                            <img src="images/logo.svg" alt="ホームページ">
                         </a>
                     </div>
 
-                    <a class="s-header__menu-toggle" href="#0"><span>メニュー</span></a>
+                    <a class="s-header__menu-toggle" href="#0"><span>Menu</span></a>
                 </div> <!-- end s-header__block -->
-
                 <nav class="s-header__nav">
-    
-                    <ul class="s-header__menu-links">
-                        <li><a href="about_ja.html">プロフィール</a></li>
-                        <li><a href="services_ja.html">サービス</a></li>
-                        <li><a href="blog_ja.html">ジャーナル</a></li>
-                        <li><a href="contact_ja.html">連絡先</a></li>
-                        <li><a href="index.html">ENGLISH</a></li> <!-- Added 日本語 Link -->
-                    </ul> <!-- s-header__menu-links -->
-
-                    <div class="s-header__contact">
-                        <a href="contact_ja.html" class="btn btn--primary s-header__contact-btn">一緒に働きましょう</a>                        
-                    </div> <!-- s-header__contact -->
-    
+                    <ul class="flex space-x-1 md:space-x-4 text-sm font-medium">
+                        <li><a href="#web_development" class="text-gray-300 hover:text-white transition-colors duration-200">ウェブ開発</a></li>
+                        <li><a href="#ai_solutions" class="text-gray-300 hover:text-white transition-colors duration-200">AIソリューション</a></li>
+                        <li><a href="#about" class="text-gray-300 hover:text-white transition-colors duration-200">当社について</a></li>
+                        <li><a href="#contact" class="text-gray-300 hover:text-white transition-colors duration-200">お問い合わせ</a></li>
+                        <li><a href="index.html" class="text-gray-300 hover:text-white transition-colors duration-200">ENGLISH</a></li>
+                    </ul>
                 </nav> <!-- end s-header__nav -->
-
             </div> <!-- end s-header__inner -->
-
         </header> <!-- end s-header -->
-
 
         <!-- # site main content
         ================================================== -->
@@ -90,554 +112,227 @@
 
             <!-- intro
             ----------------------------------------------- -->
-            <section id="intro" class="s-intro">
-
-                <div class="row s-intro__content width-sixteen-col">
-
-                    <div class="column lg-12 s-intro__content-inner grid-block">
-                        
-                        <div class="s-intro__content-text">
-                            <div class="s-intro__content-pretitle">こんにちは、私はShristy（スリスティ）です</div>
-                            <h1 class="s-intro__content-title">
-                            あなたのビジネスに成果をもたらす<br>
-                            マーケティング戦略を作成します。
-                            </h1>
-                        </div> <!-- s-intro__content-text -->
-
-                        <div class="s-intro__content-media"> 
-                            <div class="s-intro__content-media-inner" style="width: 105%; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">                               
-                                <img src="images/intro-bg.jpg" srcset="images/intro-bg.jpg 1x, images/intro-bg@2x.jpg 2x" alt="" style="width: 100%; height: auto;">
-                                <div class="lines">                               
-                                    <span></span>                                  
-                                </div>
-                            </div>
-                        </div> <!-- s-intro__content-media -->                      
-
-                        <div class="s-intro__scroll-down">
-                            <a href="#about" class="smoothscroll">
-                                <div class="scroll-icon">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="36" height="36" fill="none" stroke="#97b34a" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">&lt;!--!  Atomicons Free 1.00 by @atisalab License - https://atomicons.com/license/ (Icons: CC BY 4.0) Copyright 2021 Atomicons --&gt;<polyline points="7 13 12 18 17 13"></polyline><line x1="12" y1="18" x2="12" y2="6"></line></svg>
-                                </div>
-                                <span>もっとスクロール</span>
-                            </a>
-                        </div> <!-- s-intro__scroll-down -->
-                        
-                    </div> <!-- s-intro__content-inner -->
-
-                </div> <!-- s-intro__content -->
-
+            <section id="intro" class="s-intro" style="background-image: linear-gradient(to bottom, rgba(0,0,0,0.9), rgba(0,0,0,0.9)); display: flex; justify-content: center; align-items: center; position: relative;">
+                <div id="particles-js"></div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="s-intro__content-text" style="text-align: center; color: white; transition: all 0.4s ease-in-out;">
+                                <h1 class="s-intro__content-title" style="font-size: clamp(4rem, 10vw, 8rem); transition: all 0.4s ease-in-out;">
+                                    デジタル領域での貴社の存在感を強化
+                                </h1>
+                            </div> <!-- s-intro__content-text -->
+                            <div class="s-intro__content-desc" style="font-size: clamp(2rem, 5vw, 3rem); color: rgba(255, 255, 255, 0.7); text-align: center;">
+                                <p>Shristyverseでは、貴社の独自ニーズに合わせた高品質なウェブ開発と最先端のAIソリューションを専門的にご提供しております。新たな価値を共に創出してまいりましょう。</p>
+                            </div> <!-- s-intro__content-desc -->
+                        </div>
+                    </div>
+                </div>
             </section> <!-- end s-intro -->
+
+            <!-- web development
+            ----------------------------------------------- -->
+            <section id="web_development" class="s-web-development target-section" style="background-color: #fff5eb;">
+                <div class="row s-web-development__content width-sixteen-col">
+                    <div class="column grid-block grid-section-split">
+                        <img src="images/web_development_bg.svg" alt="" class="s-web-development__content-imgbg">
+                        <div class="section-header grid-section-split__header">
+                            <div class="text-pretitle">ウェブ開発</div>
+                            <h2 class="text-display-title">
+                            高品質でレスポンシブ、<br>
+                            拡張性に富んだ<br>
+                            ウェブアプリケーション<br>
+                            構築のパートナー
+                            </h2>
+                            <div class="s-web-development__content-btn">
+                                <a href="web_development_ja.html" class="btn btn--primary u-fullwidth">ウェブ開発について詳しく</a>
+                            </div>
+                        </div> <!-- end section-header -->
+                        <div class="s-web-development__content-main grid-section-split__primary" style="background-color: rgba(255, 245, 235, 0.8);">
+                            <p class="attention-getter">
+                            当社は経験豊富なウェブ開発者チームとして、貴社のビジネスニーズを満たす高品質なウェブアプリケーションの提供に注力しています。レスポンシブで拡張性が高く、セキュリティに優れたアプリケーションを通じ、卓越したユーザー体験を実現します。
+                            </p>
+                            <p class="attention-getter">
+                            私たちはセマンティックなHTML、CSSプリプロセッサー、React・Angular・VueなどのJavaScriptフレームワークを活用し、ベストプラクティスに基づいて開発を進めます。また、WCAG 2.1に準拠したアクセシビリティとユーザビリティを重視し、すべてのユーザーに配慮したウェブ環境を整えています。
+                            </p>
+                            <p class="attention-getter">
+                            お客様の事業目標を深く理解し、それを的確に反映したカスタムソリューションをご提供できることを誇りとしています。貴社の要件を綿密に把握し、その期待を上回るウェブ開発ソリューションを共に築き上げましょう。
+                            </p>
+                        </div> <!-- end s-web-development__content-main -->
+                    </div> <!-- content-inner -->
+                </div>
+            </section> <!-- end s-web-development -->
+
+            <!-- AI Solutions
+            ----------------------------------------------- -->
+            <section id="ai_solutions" class="s-ai-solutions target-section" style="background-color: rgba(0,0,0,0.9); color: white;">
+                <div class="row s-ai-solutions__content width-sixteen-col">
+                    <div class="column grid-block grid-section-split">
+                        <img src="images/ai_solutions_bg.svg" alt="" class="s-ai-solutions__content-imgbg">
+                        <div class="section-header grid-section-split__header">
+                            <div class="text-pretitle">AIソリューション</div>
+                            <h2 class="text-display-title" style="color: white;">
+                            最先端の人工知能で<br>貴社ビジネスを加速
+                            </h2>
+                            <div class="s-ai-solutions__content-btn">
+                                <span class="coming-soon-btn">
+                                    AI ソリューションを探る
+                                    <span class="coming-soon-badge">近日公開</span>
+                                </span>
+                            </div>
+                        </div> <!-- end section-header -->
+                        <div class="s-ai-solutions__content-main grid-section-split__primary">
+                            <p class="attention-getter" style="color: white;">
+                            当社はAI分野のパイオニアとして、あらゆる業界でビジネスを革新する先端的な人工知能ソリューションの開発・導入を得意としています。熟練のデータサイエンティストとAIエンジニアが、機械学習や深層学習の可能性を拡張し、新たな価値創造に挑戦します。
+                            </p>
+                            <p class="attention-getter" style="color: white;">
+                            自然言語処理、コンピュータビジョン、予測分析、自律型システムなど、多岐にわたるAIサービスをご提供しています。TensorFlow、PyTorch、クラウドベースのAIサービスなど、最新のフレームワークとテクノロジーを活用し、スケーラビリティとパフォーマンスを確保したソリューションを実現します。
+                            </p>
+                            <p class="attention-getter" style="color: white;">
+                            お客様固有の課題を的確に把握し、イノベーションを促進するAIソリューションをカスタムメイドでご提供いたします。現在の問題解決にとどまらず、将来のニーズを見据えた戦略的AI活用で、貴社に持続的な競合優位性をもたらします。
+                            </p>
+                            
+                        </div> <!-- end s-ai-solutions__content-main -->
+                    </div> <!-- content-inner -->
+                </div>
+            </section> <!-- end s-ai-solutions -->
 
             <!-- about
             ----------------------------------------------- -->
-            <section id="about" class="s-about target-section">
-
+            <section id="about" class="s-about target-section" style="background-color: #fff5eb;">
                 <div class="row s-about__content width-sixteen-col">
                     <div class="column grid-block grid-section-split">
-
-                        <img src="images/geometric_shape.svg" alt="" class="s-about__content-imgbg">
-
                         <div class="section-header grid-section-split__header">
-                            <div class="text-pretitle">私について</div>                           
-                            <h2 class="text-display-title">
-                            精密工学からクリエイティブデザインへ：情熱と正確さでビジョンを創造
-                            </h2>                           
+                            <div class="text-pretitle">当社について</div>
+                            <h2 class="text-display-title" style="color: black;">
+                            あらゆる企業規模に<br>革新的テクノロジーを
+                            </h2>
+                            <div class="s-about__content-btn">
+                                <a href="#contact" class="btn btn--primary u-fullwidth">お問い合わせ</a>
+                            </div>
                         </div> <!-- end section-header -->
-
                         <div class="s-about__content-main grid-section-split__primary">
-                            <p class="attention-getter"></p>
-                            ネパールの土木工学の構造化された世界から日本のダイナミックなデジタルデザインの領域へ移行する中で、私の旅は決して従来のものではありませんでした。5年間の充実した土木技師としての経験を経て、技術的専門知識と創造的情熱を融合させたいという深い願望を感じました。これが私を日本へと導き、そこでソフトウェアエンジニアリングとデジタルデザインの学習に没頭しました。
+                            <p class="attention-getter" style="color: black;">
+                            当社は、AIエンジニアとウェブ開発者に<br>よる専門チームとして、常に最先端技術の可能性を追求しています。「企業規模を問わず、すべてのお客様が最新のイノベーションを享受できるべきだ」という信念が私たちの原動力です。
                             </p>
-
-                            <p class="attention-getter">
-                            2022年以降、私はフリーランスのデジタルデザイナーとしてスキルを磨き、独自のバックグラウンドを活かして、美的に優れ、構造的に堅牢なデザインを提供しています。私のエンジニアリングのバックグラウンドは、各プロジェクトに対して方法論的なアプローチを取ることを保証し、デジタルデザインへの情熱は、すべての詳細に創造性を注入することを可能にします。
+                            <p class="attention-getter" style="color: black;">
+                            ローカルから中規模企業まで、先進的テクノロジーへのアクセスを幅広く提供することが当社の使命です。高品質なソリューションを適正な価格でご提供し、イノベーションが大企業だけの特権にならない環境を整えています。
                             </p>
-
-                            <p class="attention-getter">
-                            あなたのビジョンと目標を理解することを優先し、最終製品が期待を超えることを保証します。魅力的なウェブサイトを構築したり、素晴らしいビジュアルを作成したり、包括的なブランディング戦略を開発したりする場合でも、私はプロフェッショナリズムと芸術性を持ってあなたのアイデアを実現することに専念しています。
+                            <p class="attention-getter" style="color: black;">
+                            AIとウェブ開発の専門知識を、コストパフォーマンスに優れた形で組み合わせ、あらゆる企業が先端技術の恩恵を受けられるようサポートします。急速に変化するデジタル環境下で、貴社の競争力強化を私たちにお任せください。
                             </p>
                         </div> <!-- end s-about__content-main -->
-
-                        <div class="s-about__content-btn grid-section-split__bottom">
-                            <a href="about_ja.html" class="btn btn--stroke u-fullwidth">私についてもっと知る</a>
-
-                            <ul class="s-about__social social-list">
-                                <li>
-                                    <a href="https://www.facebook.com/ShristyPJaishi">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill:rgba(0, 0, 0, 1);transform:;-ms-filter:"><path d="M20,3H4C3.447,3,3,3.448,3,4v16c0,0.552,0.447,1,1,1h8.615v-6.96h-2.338v-2.725h2.338v-2c0-2.325,1.42-3.592,3.5-3.592 c0.699-0.002,1.399,0.034,2.095,0.107v2.42h-1.435c-1.128,0-1.348,0.538-1.348,1.325v1.735h2.697l-0.35,2.725h-2.348V21H20 c0.553,0,1-0.448,1-1V4C21,3.448,20.553,3,20,3z"></path></svg>
-                                        <span class="u-screen-reader-text">Facebook</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="https://www.linkedin.com/in/shristypjaishi">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill:rgba(0, 0, 0, 1);transform:;"><path d="M20.47,2H3.53A1.45,1.45,0,0,0,2.06,3.43V20.57A1.45,1.45,0,0,0,3.53,22H20.47a1.45,1.45,0,0,0,1.47-1.43V3.43A1.45,1.45,0,0,0,20.47,2ZM8.09,18.74h-3v-9h3ZM6.59,8.48A1.56,1.56,0,1,1,8.15,6.92,1.57,1.57,0,0,1,6.59,8.48ZM18.91,18.74h-3V13.91c0-1.21-.43-2-1.52-2A1.65,1.65,0,0,0,12.85,13a2,2,0,0,0-.1.73v5h-3s0-8.18,0-9h3V11A3,3,0,0,1,15.46,9.5c2,0,3.45,1.29,3.45,4.06Z"></path></svg>
-                                        <span class="u-screen-reader-text">LinkedIn</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="https://www.instagram.com/shristypowdel/">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill:rgba(0, 0, 0, 1);transform:;-ms-filter:"><path d="M11.999,7.377c-2.554,0-4.623,2.07-4.623,4.623c0,2.554,2.069,4.624,4.623,4.624c2.552,0,4.623-2.07,4.623-4.624 C16.622,9.447,14.551,7.377,11.999,7.377L11.999,7.377z M11.999,15.004c-1.659,0-3.004-1.345-3.004-3.003 c0-1.659,1.345-3.003,3.004-3.003s3.002,1.344,3.002,3.003C15.001,13.659,13.658,15.004,11.999,15.004L11.999,15.004z"></path><circle cx="16.806" cy="7.207" r="1.078"></circle><path d="M20.533,6.111c-0.469-1.209-1.424-2.165-2.633-2.632c-0.699-0.263-1.438-0.404-2.186-0.42 c-0.963-0.042-1.268-0.054-3.71-0.054s-2.755,0-3.71,0.054C7.548,3.074,6.809,3.215,6.11,3.479C4.9,3.946,3.945,4.902,3.477,6.111 c-0.263,0.7-0.404,1.438-0.419,2.186c-0.043,0.962-0.056,1.267-0.056,3.71c0,2.442,0,2.753,0.056,3.71 c0.015,0.748,0.156,1.486,0.419,2.187c0.469,1.208,1.424,2.164,2.634,2.632c0.696,0.272,1.435,0.426,2.185,0.45 c0.963,0.042,1.268,0.055,3.71,0.055s2.755,0,3.71-0.055c0.747-0.015,1.486-0.157,2.186-0.419c1.209-0.469,2.164-1.424,2.633-2.633 c0.263-0.7,0.404-1.438,0.419-2.186c0.043-0.962,0.056-1.267,0.056-3.71s0-2.753-0.056-3.71C20.941,7.57,20.801,6.819,20.533,6.111z M19.315,15.643c-0.007,0.576-0.111,1.147-0.311,1.688c-0.305,0.787-0.926,1.409-1.712,1.711c-0.535,0.199-1.099,0.303-1.67,0.311 c-0.95,0.044-1.218,0.055-3.654,0.055c-2.438,0-2.687,0-3.655-0.055c-0.569-0.007-1.135-0.112-1.669-0.311 c-0.789-0.301-1.414-0.923-1.719-1.711c-0.196-0.534-0.302-1.099-0.311-1.669c-0.043-0.95-0.053-1.218-0.053-3.654 c0-2.437,0-2.686,0.053-3.655c0.007-0.576,0.111-1.146,0.311-1.687c0.305-0.789,0.93-1.41,1.719-1.712 c0.534-0.198,1.1-0.303,1.669-0.311c0.951-0.043,1.218-0.055,3.655-0.055c2.437,0,2.687,0,3.654,0.055 c0.571,0.007,1.135,0.112,1.67,0.311c0.786,0.303,1.407,0.925,1.712,1.712c0.196,0.534,0.302,1.099,0.311,1.669 c0.043,0.951,0.054,1.218,0.054,3.655c0,2.436,0,2.698-0.043,3.654H19.315z"></path></svg>
-                                        <span class="u-screen-reader-text">Instagram</span>
-                                    </a>
-                                </li>
-                            </ul> <!-- end s-footer__social -->
-                        </div> <!-- end s-about__content-btn -->
-                    
                     </div> <!-- content-inner -->
                 </div>
-                
             </section> <!-- end s-about -->
 
-            <!-- expertise
+            <!-- contact
             ----------------------------------------------- -->
-            <section id="expertise" class="s-expertise">
-
-                <div class="row s-expertise__content width-sixteen-col">
-                    <div class="column xl-12 grid-block grid-section-split">
-
+            <section id="contact" class="s-contact target-section" style="background-color: rgba(0,0,0,0.9); color: white;">
+                <div class="row s-contact__content width-sixteen-col">
+                    <div class="column grid-block grid-section-split">
                         <div class="section-header grid-section-split__header">
-                            <div class="text-pretitle">専門知識</div>                           
-                            <h2 class="text-display-title">
-                            私の専門分野。
-                            </h2>     
-                            
-                            <p class="lead">
-                            デジタルデザインの複雑なタペストリーにおいて、専門知識は創造性、技術的な洞察力、戦略的な洞察力の調和の取れた組み合わせによって定義されます。土木工学とデジタルデザインの多分野にわたるバックグラウンドと、ネパールと日本での多文化的な経験が、私に独自の視点を提供し、卓越したデザインソリューションを提供することができます。以下は、私が卓越している主要な分野であり、それぞれが知的厳密さと卓越へのコミットメントによって裏付けられています。                            </p>
+                            <div class="text-pretitle">お問い合わせ</div>
+                            <h2 class="text-display-title" style="color: white;">
+                            共に、<br>圧倒的な価値を<br>創り出しましょう
+                            </h2>
                         </div> <!-- end section-header -->
-
-                        <div class="s-expertise__content-main grid-section-split__primary">
-
-                            <div class="grid-list-items list-items show-ctr">
-                                <div class="grid-list-items__item list-items__item" onclick="window.location='web_services_ja.html'" style="cursor: pointer; border: 1px solid rgba(0,0,0,0.1); border-radius: 12px; transition: all 0.3s ease; box-shadow: 0 4px 6px rgba(0,0,0,0.05); position: relative; padding: 0 2rem;">
-                                    <div class="grid-list-items__title list-items__item-header">
-                                        <h3 class="list-items__item-title">ウェブデザインと開発</h3>
-                                    </div>
-                                    <div class="grid-list-items__text list-items__item-text">
-                                        <p>
-                                            美学と機能性をシームレスに融合させたレスポンシブでユーザー中心のウェブサイトを作成します。 
-                                            洗練された企業サイトからダイナミックなeコマースプラットフォームまで、あなたのデジタルビジョンを実現します。
-                                        </p>
-                                        <ul class="list-services">
-                                            <li>レスポンシブデザイン</li>
-                                            <li>カスタムCMS統合</li>
-                                            <li>eコマースソリューション</li>
-                                        </ul>
-                                        <div style="text-align: center; margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid rgba(0,0,0,0.05);">
-                                            <span style="color: var(--color-primary); font-size: 1.1rem; font-weight: 600;">詳細を見るにはクリックしてください →</span>
-                                        </div>
-                                    </div>
-                                </div> <!-- list-item -->
-                                <div class="grid-list-items__item list-items__item" onclick="window.location='print_services.html'" style="cursor: pointer; border: 1px solid rgba(0,0,0,0.1); border-radius: 12px; transition: all 0.3s ease; box-shadow: 0 4px 6px rgba(0,0,0,0.05); position: relative; padding: 0 2rem;">
-                                    <div class="grid-list-items__title list-items__item-header">
-                                        <h3 class="list-items__item-title">印刷デザイン（メニュー、フライヤー、パンフレット）</h3>
-                                    </div>
-                                    <div class="grid-list-items__text list-items__item-text">
-                                        <p>
-                                        目を引く印刷物でブランドを高めます。私たちのデザインは、レストランのメニュー、プロモーションフライヤー、企業パンフレットなど、あなたのメッセージを効果的に伝えます。
-                                        </p>
-                                        <ul class="list-services">
-                                            <li>メニューデザイン</li>
-                                            <li>フライヤー作成</li>
-                                            <li>パンフレットレイアウト</li>
-                                        </ul>
-                                        <div style="text-align: center; margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid rgba(0,0,0,0.05);">
-                                            <span style="color: var(--color-primary); font-size: 1.1rem; font-weight: 600;">詳細を見るにはクリックしてください →</span>
-                                        </div>
-                                    </div>
-                                </div> <!-- list-item -->
-
-                                <div class="grid-list-items__item list-items__item" onclick="window.location='interior_services.html'" style="cursor: pointer; border: 1px solid rgba(0,0,0,0.1); border-radius: 12px; transition: all 0.3s ease; box-shadow: 0 4px 6px rgba(0,0,0,0.05); position: relative; padding: 0 2rem;">
-                                    <div class="grid-list-items__title list-items__item-header">
-                                        <h3 class="list-items__item-title">インテリアデザイン</h3>
-                                    </div>
-                                    <div class="grid-list-items__text list-items__item-text">
-                                        <p>
-                                        あなたのスタイルを反映し、ニーズに応える魅力的な環境に空間を変えます。私たちのインテリアデザインサービスは、美学と機能性を融合させ、調和の取れた生活空間と作業空間を作り出します。
-                                        </p>
-                                        <ul class="list-services">
-                                            <li>スペースプランニング</li>
-                                            <li>カラーコンサルティング</li>
-                                            <li>家具の選定</li>
-                                        </ul>
-                                        <div style="text-align: center; margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid rgba(0,0,0,0.05);">
-                                            <span style="color: var(--color-primary); font-size: 1.1rem; font-weight: 600;">詳細を見るにはクリックしてください →</span>
-                                        </div>
-                                    </div>
-                                </div> <!-- list-item -->
-
-                                <div class="grid-list-items__item list-items__item" onclick="window.location='software_services.html'" style="cursor: pointer; border: 1px solid rgba(0,0,0,0.1); border-radius: 12px; transition: all 0.3s ease; box-shadow: 0 4px 6px rgba(0,0,0,0.05); position: relative; padding: 0 2rem;">
-                                    <div class="grid-list-items__title list-items__item-header">
-                                        <h3 class="list-items__item-title">ソフトウェア開発とアプリデザイン</h3>
-                                    </div>
-                                    <div class="grid-list-items__text list-items__item-text">
-                                        <p>
-                                        最先端のソフトウェアとアプリソリューションであなたのデジタルアイデアを実現します。革新的なデザインと堅牢な開発を組み合わせ、直感的で高性能なアプリケーションを作成します。
-                                        </p>
-                                        <ul class="list-services">
-                                            <li>カスタムソフトウェア開発</li>
-                                            <li>モバイルアプリデザイン</li>
-                                            <li>UI/UX最適化</li>
-                                        </ul>
-                                        <div style="text-align: center; margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid rgba(0,0,0,0.05);">
-                                            <span style="color: var(--color-primary); font-size: 1.1rem; font-weight: 600;">詳細を見るにはクリックしてください →</span>
-                                        </div>
-                                    </div>
-                                </div> <!-- list-item -->
-
-                            </div> <!-- grid-list-items -->
-                        </div> <!-- end s-expertise__content-main -->
-
-                        <div class="s-expertise__content-btn grid-section-split__bottom">
-                            <a href="services_ja.html" class="btn btn--stroke u-fullwidth">すべてのサービスを見る</a>
-                        </div> <!-- end s-about__content-btn -->
-
-                    </div> <!-- end grid-block-->
-                </div> <!-- end s-expertise__content -->
-
-            </section> <!-- end s-expertise -->
-
-            <!-- clients
-            ----------------------------------------------- -->
-            <section id="clients" class="s-clients">          
-
-                <div class="row s-clients__content-block width-sixteen-col">
-                    <div class="column xl-12 grid-block grid-section-split">
-                    
-                        <div class="section-header grid-section-split__header">
-                            <div class="text-pretitle">クライアント</div>                           
-                            <h2 class="text-display-title">
-                            これらの素晴らしいブランドと仕事をする特権を持っています。
-                            </h2>       
-                        </div> <!-- end section-header -->
-                    
-                        <div class="grid-section-split__primary">
-                            <p class="lead">
-                            多様なクライアントとのコラボレーションは、私の専門知識を形成し、デザイン哲学を洗練する上で重要な役割を果たしてきました。各パートナーシップは、創造性と戦略的洞察力を融合させ、成功を促進し、意味のあるつながりを育むためのユニークな機会を提供します。以下は、私が名誉を持って仕事をした尊敬すべきブランドや組織の一部であり、それぞれが私のフリーランスの実践を定義する協力精神と卓越性の証です。
-                            </p>   
-
-                            <p>
-                            確立されたグローバルブランドからダイナミックなスタートアップまで、私のクライアントポートフォリオは、技術、ヘルスケア、教育、クリエイティブアーツなど、さまざまな業界にわたります。この多様な経験により、異なる市場の需要や文化的な文脈に適応し、各デザインソリューションが関連性があり、影響力があることを保証します。
-                            </p>
-                        </div> <!-- end grid-section-split__primary -->
-                    
-                    </div> <!-- end column -->
-                </div> <!-- end row -->
-
-                <div class="row s-clients__content-block width-sixteen-col">
-                    <div class="column xl-12">
-                    
-                        <div class="clients-list">                            
-                            <div class="clients-list__item">
-                                <a href="#0">
-                                    <img src="images/clients/flash.svg" alt="">
-                                </a>
-                            </div>
-                            <div class="clients-list__item">
-                                <a href="#0">
-                                    <img src="images/clients/rise.svg" alt="">
-                                </a>
-                            </div>
-                            <div class="clients-list__item">
-                                <a href="#0">
-                                    <img src="images/clients/cactus.svg" alt="">
-                                </a>
-                            </div>
-                            <div class="clients-list__item">
-                                <a href="#0">
-                                    <img src="images/clients/pinpoint.svg" alt="">
-                                </a>
-                            </div>
-                            <div class="clients-list__item">
-                                <a href="#0">
-                                    <img src="images/clients/proline.svg" alt="">
-                                </a>
-                            </div>
-                            <div class="clients-list__item">
-                                <a href="#0">
-                                    <img src="images/clients/vision.svg" alt="">
-                                </a>
-                            </div>
-                            <div class="column clients-list__item">
-                                <a href="#0">
-                                    <img src="images/clients/volume.svg" alt="">
-                                </a>
-                            </div>
-                            <div class="column clients-list__item">
-                                <a href="#0">
-                                    <img src="images/clients/hitech.svg" alt="">
-                                </a>
-                            </div><div class="clients-list__item">
-                                <a href="#0">
-                                    <img src="images/clients/terra.svg" alt="">
-                                </a>
-                            </div>
-                            <div class="clients-list__item">
-                                <a href="#0">
-                                    <img src="images/clients/chain.svg" alt="">
-                                </a>
-                            </div>
-                        </div> <!-- end clients-list -->
-
-                    </div> <!-- end column -->
-                </div> <!-- end row -->
-                                
-                <div class="row s-testimonials__content width-sixteen-col">
-                    <div class="column xl-12 testimonials">
-                    
-                        <div class="swiper-container testimonials__slider home-slider">
-
-                            <div class="swiper-wrapper">
-                                <div class="testimonials__slide swiper-slide">
-                                    <p>
-                                    "Shristyと仕事をすることは、私たちのブランドにとってゲームチェンジャーでした。彼女のビジョンを理解し、それを素晴らしいウェブサイトに変換する能力は、私たちの期待を超えました。彼女がプロジェクトにもたらした細部への注意と創造性は素晴らしかったです。強くお勧めします！"
-                                    </p>
-                                    <div class="testimonials__author">
-                                        <img src="images/avatars/user-01.jpg" alt="Author image" class="testimonials__avatar">
-                                        <cite class="testimonials__cite">
-                                            <strong>サラ・トンプソン</strong>
-                                            <span>スタートアップ創業者</span>
-                                        </cite>
-                                    </div>
+                        <div class="s-contact__content-main grid-section-split__primary">
+                            <form id="contactForm" class="s-contact__form">
+                                <div class="form-field">
+                                    <input type="text" name="name" id="name" class="u-fullwidth" placeholder="お名前" required>
                                 </div>
-                                <div class="testimonials__slide swiper-slide">
-                                    <p>
-                                    "技術的なバックグラウンドを持つ者として、Shristyの構造化されたデザインアプローチを評価しました。彼女は私たちの要件を彼女の創造的な洞察とシームレスに統合し、ユーザーフレンドリーで視覚的に魅力的な製品インターフェースを作成しました。彼女のプロフェッショナリズムと献身は一流でした。"
-                                    </p>
-                                    <div class="testimonials__author">
-                                        <img src="images/avatars/user-04.jpg" alt="Author image" class="testimonials__avatar">
-                                        <cite class="testimonials__cite">
-                                            <strong>ケンジ・ヤマモト</strong>
-                                            <span>プロダクトマネージャー</span>
-                                        </cite>
-                                    </div>
+                                <div class="form-field">
+                                    <input type="email" name="email" id="email" class="u-fullwidth" placeholder="メールアドレス" required>
                                 </div>
-                                <div class="testimonials__slide swiper-slide">
-                                    <p>
-                                    "Shristyのエンジニアリングの精度と芸術的な創造性のユニークな組み合わせに感銘を受けました。彼女は私たちの会社の本質を真に捉えた包括的なブランディングパッケージを提供しました。彼女の協力的な精神は、全体のプロセスをスムーズで楽しいものにしました。"
-                                    </p>
-                                    <div class="testimonials__author">
-                                        <img src="images/avatars/user-06.jpg" alt="Author image" class="testimonials__avatar">
-                                        <cite class="testimonials__cite">
-                                            <strong>マヤ・シャルマ</strong>
-                                            <span>マーケティングディレクター</span>
-                                        </cite>
-                                    </div>
+                                <div class="form-field">
+                                    <textarea name="message" id="message" class="u-fullwidth" placeholder="お問い合わせ内容" rows="6" required></textarea>
                                 </div>
-                                <div class="testimonials__slide swiper-slide">
-                                    <p>
-                                    "最初の相談から最終納品まで、Shristyは注意深く、応答性が高く、非常に才能がありました。彼女のデザインは見た目が素晴らしいだけでなく、パフォーマンスも優れています。新しいウェブサイトを立ち上げて以来、エンゲージメントが大幅に増加しました。ありがとう！"
-                                    </p>
-                                    <div class="testimonials__author">
-                                        <img src="images/avatars/user-02.jpg" alt="Author image" class="testimonials__avatar">
-                                        <cite class="testimonials__cite">
-                                            <strong>タロウ・スズキ</strong>
-                                            <span>起業家</span>
-                                        </cite>
-                                    </div>
-                                </div>
-                            </div> <!-- end swiper-wrapper -->
-
-                            <div class="swiper-pagination"></div>
-
-                        </div> <!--end testimonials__slider -->                    
-                    
-                    </div> <!-- end column -->
-                </div> <!-- end row -->
-
-
-            </section> <!-- end s-clients -->            
-
-        </section> <!-- s-content-->
-
-        <!-- # cta
-        ================================================== -->
-        <section id="cta" class="s-cta">
-
-            <div class="row row-x-center text-center">
-                <div class="column xl-8 lg-12">
-
-                    <div class="s-cta__content">
-                        <h2 class="text-display-title">
-                        今日から相談を始めましょう。
-                        </h2>
-                        <p class="lead"></p>
-                        あなたのビジョンを現実に変える準備はできていますか？一緒にクリエイティブな旅に出ましょう！
-                        プロジェクトのニーズを話し合い、目標を達成するためにどのように協力できるかを発見するために、今日無料相談を予約してください。</p>
-                        <a href="contact_ja.html" class="btn btn--primary">一緒に働きましょう</a>
-                    </div>
-
+                                <form action="https://formspree.io/f/mqakolgv" method="POST">
+                                    <input type="hidden" name="_subject" value="New contact form submission">
+                                    <input type="hidden" name="_replyto" value="#email">
+                                    <input type="hidden" name="_cc" value="powdeljaishishristy@gmail.com">
+                                    <button type="submit" class="btn btn--primary u-fullwidth">送信</button>
+                                </form>
+                            </form>
+                        </div> <!-- end s-contact__content-main -->
+                    </div> <!-- content-inner -->
                 </div>
-            </div>
-
-        </section> <!-- end s-cta -->
-
-        <!-- # journal
-        ================================================== -->
-        <section id="journal" class="s-journal">
-
-            <div class="row s-journal__content width-sixteen-col">
-                <div class="column xl-12 grid-block">
-
-                    <div class="grid-full section-header text-center">
-                        <div class="text-pretitle">最近の記事</div>                           
-                        <h2 class="text-display-title">
-                        私のブログからの最新記事。
-                        </h2>  
-                    </div> <!-- end section-header --> 
-
-                    <div class="grid-full s-journal__content-main grid-list-items">
-
-                        <div class="grid-list-items__item blog-card">
-                            <div class="blog-card__header">
-                                <div class="blog-card__cat-links">
-                                    <a href="blog.html">コンテンツマーケティング</a>
-                                </div>
-                                <h3 class="blog-card__title">
-                                    <a href="blog_1.html">コンテンツマーケティング：文化を超えた物語の織り成し</a>
-                                </h3>
-                            </div>
-                            <div class="blog-card__text">
-                                <p>
-                                    コンテンツマーケティングは単なるプロモーションを超え、多様な文化に共鳴する物語の具現化です。インドの活気ある市場から日本の規律あるオフィス、ネパールの静かな谷から西洋諸国のダイナミックなアリーナまで、それは適応し、繁栄します。効果的なコンテンツマーケティングは、ブランドと消費者を結びつけ、ニーズや願望に応えながら、地域の伝統や価値を尊重します。文化的なニュアンスを受け入れ、真のつながりを育むことで、ブランドはグローバルな観客を感動させ、引き付ける影響力のある物語を作り出すこ��ができます。
-                                </p>
-                            </div>
-                        </div> <!-- end blog-card -->
-                        <div class="grid-list-items__item blog-card">
-                            <div class="blog-card__header">
-                                <div class="blog-card__cat-links">
-                                    <a href="blog.html">ソフトウェア開発</a>
-                                </div>
-                                <h3 class="blog-card__title"><a href="blog_2.html">ソフトウェア開発の未来：生成AIの活用</a></h3>
-                            </div>
-                            <div class="blog-card__text">
-                                <p>
-                                ソフトウェア開発の風景は、生成人工知能（AI）の台頭により変革を遂げています。このパラダイムシフトは、ソフトウェアの概念化、開発、展開の方法を再定義しています。GitHub CopilotやChatGPTのようなツールに代表される生成AIは、コーディングプロセスを加速し、イノベーションを促進します。それは人間の能力を拡張し、開発者が複雑な問題解決や創造的な取り組みに集中できるようにします。
-                                </p>
-                            </div>
-                        </div> <!-- end blog-card -->
-                        <div class="grid-list-items__item blog-card">
-                            <div class="blog-card__header">
-                                <div class="blog-card__cat-links">
-                                    <a href="blog.html">インテリアデザイン</a>
-                                </div>
-                                <h3 class="blog-card__title"><a href="blog_3.html">空間と物語のデザイン：インテリアデザインへの私の旅</a></h3>
-                            </div>
-                            <div class="blog-card__text">
-                                <p>
-                                インテリアデザインは、家具の配置や色の選択以上のものであり、個性、��的、感情を反映する環境を作り出すことです。デジタルデザインからインテリアスペースへの私の旅は、美学への愛と空間が人間の経験に与える影響への深い感謝を融合させた自然な進展でした。日本のミニマリズムとネパールの豊かな文化遺産からインスピレーションを得て、シンプルさと温かさのバランスを取ったインテリアを作り出します。
-                                </p>
-                            </div>
-                        </div> <!-- end blog card -->
-                        <div class="grid-list-items__item blog-card">
-                            <div class="blog-card__header">
-                                <div class="blog-card__cat-links">
-                                    <a href="blog.html">ブランディング</a>
-                                </div>
-                                <h3 class="blog-card__title"><a href="blog_4.html">ブランディングとアイデンティティ：持続的な印象の創造</a></h3>
-                            </div>
-                            <div class="blog-card__text">
-                                <p>
-                                今日の競争の激しい市場では、強力で一貫したブランドアイデンティティを確立することが極めて重要です。ブランディングはロゴの作成を超え、企業の本質を具現化し、感情を喚起し、認識を育みま���。私たちのブランディングサービスは、あなたのビジネスを明確に位置づけ、顧客との意味のあるつながりを築きます。統一されたビジュアルアイデ��ティティシステム、強力なロゴ、包括的なブランドガイドラインを通じて、記憶に残り、影響力のあるブランドを作り出します。
-                                </p>
-                            </div>
-                        </div> <!-- end blog-card -->
-
-                    </div> <!-- end grid-list-items -->
-
-                </div> <!-- end grid-block-->
-            </div> <!-- end s-journal__content -->
-
-        </section> <!-- end s-journal -->
-
-
-        <!-- # footer 
-        ================================================== -->
-        <footer class="s-footer">
-            <div class="row s-footer__content">
-                <div class="column xl-6 lg-6 md-12 s-footer__block s-footer__about">                    
-                    <h3>スリスティについて</h3>
-                    <p>
-                    Shristy（スリスティ）は、デジタルナラティブの建築家であり、エンジニアリングの精度と創造的な芸術性を融合させています。 
-                    土木工学とデジタルデザインにわたる10年以上の経験を持ち、視覚的に魅力的で技術的に優れたカスタムソリューションを提供します。 
-                    彼女の作品は、ネパールの遺産と日本での国際的な経験に裏打ちされたグローバルな感性を体現しています。 
-                    2022年からフリーランスのデザイナーとして、ShristyはUI/UXからウェブ開発まで多様なプロジェクトを手掛けており、 
-                    それぞれが卓越性と意味のあるデジタル体験へのコミットメントを反映しています。 
-                    彼女の独自の視点は、グローバルに魅力的で文脈に適したデザインを作り出すことが可能にし、 
-                    デジタルデザインの分野でのリーダーとしての地位を確立しています。
-                    </p>               
-                </div>                
-                <div class="column xl-3 lg-6 md-12 s-footer__block s-footer__site-links">
-                    <h3>サイトリンク</h3>
-                    <ul class="link-list">
-                        <li><a href="index_ja.html">ホーム</a></li>
-                        <li><a href="services_ja.html">サービス</a></li>
-                        <li><a href="blog_ja.html">ジャーナル</a></li>
-                        <li><a href="about_ja.html">プロフィール</a></li>
-                        <li><a href="contact_ja.html">連絡先</a></li>
-                        <li><a href="index.html">ENGLISH</a></li> <!-- Added 日本語 Link -->
-                    </ul>
-                </div>
-                <div class="column xl-3 lg-6 md-12 tab-12 s-footer__block s-footer__newsletter">
-                    <h3>ニュースレター</h3>
-                    <p>
-                    最新のプロジェクト、デザインのヒント、業界の洞察をお届けします。ニュースレターに登録して、独占コンテンツを直接受け取りましょう。
-                    </p>
-
-                    <div class="subscribe-form">
-                        <form id="mc-form" class="mc-form">
-                            <input type="email" name="EMAIL" id="mce-EMAIL" class="u-fullwidth text-center" placeholder="あなたのメールアドレス" title="メールアドレスのドメイン部分が無効です（@の後の部分）。" pattern="^([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22))*\x40([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d))*(\.\w{2,})+$" required>
-                            <input type="submit" name="subscribe" value="購読する" class="btn btn--primary btn--small u-fullwidth">
-                            <!-- <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_cdb7b577e41181934ed6a6a44_9a91cfe7b3" tabindex="-1" value=""></div> -->
-                            <div class="mc-status"></div>
-                        </form>
-                    </div>
-                </div>
-            </div>    
-            
-            <div class="row s-footer__bottom">
-                <div class="column xl-6 lg-12">
-                    <ul class="s-footer__social social-list">
-                        <li>
-                            <a href="https://www.facebook.com/ShristyPJaishi">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill:rgba(0, 0, 0, 1);transform:;-ms-filter:"><path d="M20,3H4C3.447,3,3,3.448,3,4v16c0,0.552,0.447,1,1,1h8.615v-6.96h-2.338v-2.725h2.338v-2c0-2.325,1.42-3.592,3.5-3.592 c0.699-0.002,1.399,0.034,2.095,0.107v2.42h-1.435c-1.128,0-1.348,0.538-1.348,1.325v1.735h2.697l-0.35,2.725h-2.348V21H20 c0.553,0,1-0.448,1-1V4C21,3.448,20.553,3,20,3z"></path></svg>
-                                <span class="u-screen-reader-text">Facebook</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.linkedin.com/in/shristypjaishi/">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill:rgba(0, 0, 0, 1);transform:;"><path d="M20.47,2H3.53A1.45,1.45,0,0,0,2.06,3.43V20.57A1.45,1.45,0,0,0,3.53,22H20.47a1.45,1.45,0,0,0,1.47-1.43V3.43A1.45,1.45,0,0,0,20.47,2ZM8.09,18.74h-3v-9h3ZM6.59,8.48A1.56,1.56,0,1,1,8.15,6.92,1.57,1.57,0,0,1,6.59,8.48ZM18.91,18.74h-3V13.91c0-1.21-.43-2-1.52-2A1.65,1.65,0,0,0,12.85,13a2,2,0,0,0-.1.73v5h-3s0-8.18,0-9h3V11A3,3,0,0,1,15.46,9.5c2,0,3.45,1.29,3.45,4.06Z"></path></svg>
-                                <span class="u-screen-reader-text">LinkedIn</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.instagram.com/shristypowdel/">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill:rgba(0, 0, 0, 1);transform:;-ms-filter:"><path d="M11.999,7.377c-2.554,0-4.623,2.07-4.623,4.623c0,2.554,2.069,4.624,4.623,4.624c2.552,0,4.623-2.07,4.623-4.624 C16.622,9.447,14.551,7.377,11.999,7.377L11.999,7.377z M11.999,15.004c-1.659,0-3.004-1.345-3.004-3.003 c0-1.659,1.345-3.003,3.004-3.003s3.002,1.344,3.002,3.003C15.001,13.659,13.658,15.004,11.999,15.004L11.999,15.004z"></path><circle cx="16.806" cy="7.207" r="1.078"></circle><path d="M20.533,6.111c-0.469-1.209-1.424-2.165-2.633-2.632c-0.699-0.263-1.438-0.404-2.186-0.42 c-0.963-0.042-1.268-0.054-3.71-0.054s-2.755,0-3.71,0.054C7.548,3.074,6.809,3.215,6.11,3.479C4.9,3.946,3.945,4.902,3.477,6.111 c-0.263,0.7-0.404,1.438-0.419,2.186c-0.043,0.962-0.056,1.267-0.056,3.71c0,2.442,0,2.753,0.056,3.71 c0.015,0.748,0.156,1.486,0.419,2.187c0.469,1.208,1.424,2.164,2.634,2.632c0.696,0.272,1.435,0.426,2.185,0.45 c0.963,0.042,1.268,0.055,3.71,0.055s2.755,0,3.71-0.055c0.747-0.015,1.486-0.157,2.186-0.419c1.209-0.469,2.164-1.424,2.633-2.633 c0.263-0.7,0.404-1.438,0.419-2.186c0.043-0.962,0.056-1.267,0.056-3.71s0-2.753-0.056-3.71C20.941,7.57,20.801,6.819,20.533,6.111z M19.315,15.643c-0.007,0.576-0.111,1.147-0.311,1.688c-0.305,0.787-0.926,1.409-1.712,1.711c-0.535,0.199-1.099,0.303-1.67,0.311 c-0.95,0.044-1.218,0.055-3.654,0.055c-2.438,0-2.687,0-3.655-0.055c-0.569-0.007-1.135-0.112-1.669-0.311 c-0.789-0.301-1.414-0.923-1.719-1.711c-0.196-0.534-0.302-1.099-0.311-1.669c-0.043-0.95-0.053-1.218-0.053-3.654 c0-2.437,0-2.686,0.053-3.655c0.007-0.576,0.111-1.146,0.311-1.687c0.305-0.789,0.93-1.41,1.719-1.712 c0.534-0.198,1.1-0.303,1.669-0.311c0.951-0.043,1.218-0.055,3.655-0.055c2.437,0,2.687,0,3.654,0.055 c0.571,0.007,1.135,0.112,1.67,0.311c0.786,0.303,1.407,0.925,1.712,1.712c0.196,0.534,0.302,1.099,0.311,1.669 c0.043,0.951,0.054,1.218,0.054,3.655c0,2.436,0,2.698-0.043,3.654H19.315z"></path></svg>
-                                <span class="u-screen-reader-text">Instagram</span>
-                            </a>
-                        </li>
-                    </ul> <!-- end s-footer__social -->
-                </div>
-                <div class="column xl-6 lg-12">
-                    <p class="ss-copyright">
-                        <span>Copyright Shristy 2024 Design by Shristy Powdel Jaishi</span> 
-                    </p>
-                </div>
-
-                <div class="ss-go-top">
-                    <a class="smoothscroll" title="Back to Top" href="#top">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="36" height="36" fill="none" stroke="#ffffff" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">&lt;!--!  Atomicons Free 1.00 by @atisalab License - https://atomicons.com/license/ (Icons: CC BY 4.0) Copyright 2021 Atomicons --&gt;<polyline points="17 11 12 6 7 11"></polyline><line x1="12" y1="18" x2="12" y2="6"></line></svg>
-                    </a>
-                </div> <!-- end ss-go-top -->
-            </div>
-            
-        </footer> <!-- end s-footer -->
-
+            </section> <!-- end s-contact -->
     </div> <!-- end page-wrap -->
-
     <!-- Java Script
     ================================================== -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script src="js/plugins.js"></script>
     <script src="js/main.js"></script>
-
+    <script>
+        particlesJS('particles-js', {
+            particles: {
+                number: {
+                    value: 80,
+                    density: {
+                        enable: true,
+                        value_area: 800
+                    }
+                },
+                color: {
+                    value: '#ffffff'
+                },
+                shape: {
+                    type: 'circle'
+                },
+                opacity: {
+                    value: 0.5,
+                    random: false
+                },
+                size: {
+                    value: 3,
+                    random: true
+                },
+                line_linked: {
+                    enable: true,
+                    distance: 150,
+                    color: '#ffffff',
+                    opacity: 0.4,
+                    width: 1
+                },
+                move: {
+                    enable: true,
+                    speed: 2,
+                    direction: 'none',
+                    random: false,
+                    straight: false,
+                    out_mode: 'out',
+                    bounce: false
+                }
+            },
+            interactivity: {
+                detect_on: 'canvas',
+                events: {
+                    onhover: {
+                        enable: true,
+                        mode: 'grab'
+                    },
+                    onclick: {
+                        enable: true,
+                        mode: 'push'
+                    },
+                    resize: true
+                },
+                modes: {
+                    grab: {
+                        distance: 140,
+                        line_linked: {
+                            opacity: 1
+                        }
+                    },
+                    push: {
+                        particles_nb: 4
+                    }
+                }
+            },
+            retina_detect: true
+        });
+    </script>
 </body>
 </html>
