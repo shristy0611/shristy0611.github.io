@@ -3,75 +3,250 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>AIソリューション | Shristyverse</title>
+    <title>AI ソリューション | Shristyverse</title>
     <link rel="stylesheet" href="css/vendor.css">
     <link rel="stylesheet" href="css/styles.css">
     <style>
-        .ai-solutions-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+        .portfolio-container {
             padding: 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
         }
-        .solution-item {
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+        }
+        .portfolio-item {
             position: relative;
-            border-radius: 15px;
+            border-radius: 12px;
             overflow: hidden;
             transition: all 0.3s ease;
             background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            height: 280px;
         }
-        .solution-item:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        .portfolio-item:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
         }
-        .solution-icon {
-            width: 60px;
-            height: 60px;
-            margin: 2rem auto;
-            background: linear-gradient(45deg, #00f2fe, #4facfe);
-            border-radius: 50%;
+        .portfolio-item img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 12px 12px 0 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .portfolio-content {
+            padding: 1rem 1.5rem;
+            color: white;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .portfolio-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.5rem;
+        }
+        .portfolio-content h3 {
+            font-size: 2rem;
+            margin: 0;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            color: rgba(255, 255, 255, 0.95);
+            line-height: 1.2;
+        }
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            justify-content: flex-end;
+            max-width: 60%;
+        }
+        .tech-badge {
+            padding: 0.4rem 0.8rem;
+            border-radius: 8px;
+            background: rgba(0, 242, 254, 0.1);
+            font-size: 1.4rem;
+            color: rgba(255, 255, 255, 0.8);
+            letter-spacing: 0.5px;
+            border: 1px solid rgba(0, 242, 254, 0.2);
+            white-space: nowrap;
+        }
+        .section-title {
+            text-align: center;
+            margin: 4rem 0 3rem;
+            color: white;
+        }
+        .section-title h1 {
+            font-size: 5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, #fff, #00f2fe);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1.2;
+        }
+        .section-title p {
+            font-size: 2.2rem;
+            color: rgba(255, 255, 255, 0.7);
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.4;
+        }
+        @media (max-width: 1200px) {
+            .portfolio-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            .portfolio-item {
+                height: 300px;
+            }
+            .portfolio-item img {
+                height: 200px;
+            }
+        }
+        @media (max-width: 900px) {
+            .portfolio-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .portfolio-item {
+                height: 320px;
+            }
+            .portfolio-item img {
+                height: 220px;
+            }
+            .section-title h1 {
+                font-size: 4rem;
+            }
+            .section-title p {
+                font-size: 1.8rem;
+            }
+        }
+        @media (max-width: 600px) {
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+            .portfolio-container {
+                padding: 1rem;
+            }
+            .portfolio-item {
+                height: 340px;
+            }
+            .portfolio-item img {
+                height: 240px;
+            }
+            .section-title h1 {
+                font-size: 3rem;
+            }
+            .section-title p {
+                font-size: 1.6rem;
+            }
+            .portfolio-content h3 {
+                font-size: 1.8rem;
+            }
+            .tech-badge {
+                font-size: 1.2rem;
+            }
+        }
+        /* Modal Styles */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            z-index: 1000;
+            backdrop-filter: blur(5px);
+        }
+        .modal {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 90%;
+            max-width: 1200px;
+            height: 80vh;
+            background: #1a1a1a;
+            border-radius: 15px;
+            z-index: 1001;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        }
+        .modal-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0.5rem 1rem;
+            background: rgba(0, 0, 0, 0.8);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .modal-title {
+            color: white;
+            margin: 0;
+            font-size: 2rem;
+            font-weight: 500;
+            flex: 1;
+            text-align: left;
+        }
+        .modal-header .visit-site {
+            font-size: 2rem;
+            color: rgba(255, 255, 255, 0.9);
+            text-decoration: none;
+            padding: 0 2rem;
+            transition: color 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .modal-header .visit-site:hover {
+            color: #00f2fe;
+        }
+        .modal-header .visit-site::after {
+            content: '→';
+            display: inline-block;
+            transition: transform 0.3s ease;
+        }
+        .modal-header .visit-site:hover::after {
+            transform: translateX(5px);
+        }
+        .close-modal-container {
+            flex: 1;
+            display: flex;
+            justify-content: flex-end;
+        }
+        .close-modal {
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            color: white;
+            font-size: 1.6rem;
+            cursor: pointer;
+            padding: 0.5rem;
+            border-radius: 12px;
+            transition: all 0.2s ease;
+            width: 40px;
+            height: 40px;
             display: flex;
             align-items: center;
             justify-content: center;
         }
-        .solution-content {
-            padding: 1.5rem;
-            color: white;
-            text-align: center;
-        }
-        .features-list {
-            text-align: left;
-            margin-top: 1rem;
-            padding-left: 1.5rem;
-        }
-        .features-list li {
-            margin-bottom: 0.5rem;
-            position: relative;
-        }
-        .features-list li::before {
-            content: "•";
-            color: #4facfe;
-            position: absolute;
-            left: -1rem;
-        }
-        .section-title {
-            text-align: center;
-            margin: 4rem 0;
-            color: white;
-        }
-        .solution-cta {
-            display: inline-block;
-            margin-top: 1.5rem;
-            padding: 0.75rem 1.5rem;
-            background: linear-gradient(45deg, #00f2fe, #4facfe);
-            border-radius: 25px;
-            color: white;
-            text-decoration: none;
-            transition: transform 0.3s ease;
-        }
-        .solution-cta:hover {
+        .close-modal:hover {
+            background: rgba(255, 255, 255, 0.2);
             transform: scale(1.05);
+        }
+        .modal-frame {
+            flex-grow: 1;
+            border: none;
+            border-radius: 0 0 15px 15px;
+            background: #fff;
+            width: 100%;
+            height: 100%;
         }
         body {
             background: linear-gradient(135deg, #000000, #1a1a1a);
@@ -83,11 +258,11 @@
         <div class="row s-header__inner width-sixteen-col">
             <div class="s-header__block">
                 <div class="s-header__logo">
-                    <a class="logo" href="index_ja.html">
-                        <img src="images/logo.svg" alt="ホームページ">
+                    <a class="logo" href="index.html">
+                        <img src="images/logo.svg" alt="Homepage">
                     </a>
                 </div>
-                <a class="s-header__menu-toggle" href="#0"><span>メニュー</span></a>
+                <a class="s-header__menu-toggle" href="#0"><span>Menu</span></a>
             </div>
             <nav class="s-header__nav">
                 <ul class="flex space-x-1 md:space-x-4 text-sm font-medium">
@@ -103,66 +278,81 @@
 
     <main style="padding-top: 80px;">
         <div class="section-title">
-            <h1>AIソリューション</h1>
-            <p>次世代のAI技術で貴社のビジネスを革新</p>
+            <h1>AI ソリューション</h1>
+            <p>最先端のAIテクノロジーによるモダンビジネスソリューション</p>
         </div>
 
-        <div class="ai-solutions-grid">
-            <div class="solution-item">
-                <div class="solution-icon">
-                    <svg width="24" height="24" fill="white" viewBox="0 0 24 24">
-                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm3.88-11.71L10 14.17l-1.88-1.88a.996.996 0 1 0-1.41 1.41l2.59 2.59c.39.39 1.02.39 1.41 0L17.3 9.7a.996.996 0 0 0 0-1.41c-.39-.39-1.03-.39-1.42 0z"/>
-                    </svg>
-                </div>
-                <div class="solution-content">
-                    <h3>自然言語処理</h3>
-                    <ul class="features-list">
-                        <li>多言語テキスト分析</li>
-                        <li>感情分析</li>
-                        <li>自動コンテンツ生成</li>
-                        <li>チャットボット統合</li>
-                    </ul>
-                    <a href="#contact" class="solution-cta">詳細を見る</a>
+        <div class="portfolio-container">
+            <div class="portfolio-grid">
+                <div class="portfolio-item" onclick="showPreview('https://sentiment-analyzer0611.vercel.app/', '感情分析')">
+                    <img src="images/ai_solutions/sentiment-analyzer.svg" alt="感情分析">
+                    <div class="portfolio-content">
+                        <div class="portfolio-header">
+                            <h3>感情分析</h3>
+                            <div class="tech-stack">
+                                <span class="tech-badge">AI</span>
+                                <span class="tech-badge">NLP</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
+        </div>
 
-            <div class="solution-item">
-                <div class="solution-icon">
-                    <svg width="24" height="24" fill="white" viewBox="0 0 24 24">
-                        <path d="M9 11.75c-.69 0-1.25.56-1.25 1.25s.56 1.25 1.25 1.25 1.25-.56 1.25-1.25-.56-1.25-1.25-1.25zm6 0c-.69 0-1.25.56-1.25 1.25s.56 1.25 1.25 1.25 1.25-.56 1.25-1.25-.56-1.25-1.25-1.25zM12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8 0-.29.02-.58.05-.86 2.36-1.05 4.23-2.98 5.21-5.37C11.07 8.33 14.05 10 17.42 10c.78 0 1.53-.09 2.25-.26.21.71.33 1.47.33 2.26 0 4.41-3.59 8-8 8z"/>
-                    </svg>
+        <!-- Modal -->
+        <div class="modal-overlay" id="modal-overlay">
+            <div class="modal">
+                <div class="modal-header">
+                    <h2 class="modal-title" id="modal-title">プロジェクトを選択してください</h2>
+                    <div class="modal-actions">
+                        <a href="#" class="visit-site" id="preview-link" target="_blank">サイトを訪問</a>
+                    </div>
+                    <div class="close-modal-container">
+                        <button class="close-modal" onclick="closeModal()">×</button>
+                    </div>
                 </div>
-                <div class="solution-content">
-                    <h3>コンピュータビジョン</h3>
-                    <ul class="features-list">
-                        <li>物体検出</li>
-                        <li>顔認識</li>
-                        <li>画像分類</li>
-                        <li>動画解析</li>
-                    </ul>
-                    <a href="#contact" class="solution-cta">詳細を見る</a>
-                </div>
-            </div>
-
-            <div class="solution-item">
-                <div class="solution-icon">
-                    <svg width="24" height="24" fill="white" viewBox="0 0 24 24">
-                        <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zm-7-2h2V7h-4v2h2z"/>
-                    </svg>
-                </div>
-                <div class="solution-content">
-                    <h3>予測分析</h3>
-                    <ul class="features-list">
-                        <li>市場動向分析</li>
-                        <li>リスク評価</li>
-                        <li>顧客行動予測</li>
-                        <li>リアルタイム分析</li>
-                    </ul>
-                    <a href="#contact" class="solution-cta">詳細を見る</a>
-                </div>
+                <iframe class="modal-frame" id="preview-frame"></iframe>
             </div>
         </div>
     </main>
+
+    <script>
+        function showPreview(url, title) {
+            const modal = document.getElementById('modal-overlay');
+            const frame = document.getElementById('preview-frame');
+            const modalTitle = document.getElementById('modal-title');
+            const previewLink = document.getElementById('preview-link');
+            
+            frame.src = url;
+            modalTitle.textContent = title;
+            previewLink.href = url;
+            modal.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('modal-overlay');
+            const frame = document.getElementById('preview-frame');
+            
+            modal.style.display = 'none';
+            frame.src = '';
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal when clicking outside
+        document.getElementById('modal-overlay').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
+
+        // Close modal with escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeModal();
+            }
+        });
+    </script>
 
     <script src="js/plugins.js"></script>
     <script src="js/main.js"></script>
