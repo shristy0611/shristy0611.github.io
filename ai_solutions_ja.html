@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>AI ソリューション | Shristyverse</title>
+    <title>AI Solutions Portfolio | Shristyverse</title>
     <link rel="stylesheet" href="css/vendor.css">
     <link rel="stylesheet" href="css/styles.css">
     <style>
@@ -14,69 +14,54 @@
         }
         .portfolio-grid {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 1.5rem;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
         }
-        .portfolio-item {
-            position: relative;
-            border-radius: 12px;
-            overflow: hidden;
-            transition: all 0.3s ease;
+        .ai-card {
             background: rgba(255, 255, 255, 0.05);
-            cursor: pointer;
+            border-radius: 16px;
+            padding: 2.5rem;
+            transition: all 0.3s ease;
+            height: 100%;
             display: flex;
             flex-direction: column;
-            height: 280px;
+            position: relative;
+            overflow: hidden;
         }
-        .portfolio-item:hover {
+        .ai-card:hover {
             transform: translateY(-5px);
             background: rgba(255, 255, 255, 0.1);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
         }
-        .portfolio-item img {
-            width: 100%;
-            height: 180px;
-            object-fit: cover;
-            border-radius: 12px 12px 0 0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        .ai-card h3 {
+            font-size: 2.4rem;
+            margin-bottom: 1.5rem;
+            color: #00f2fe;
         }
-        .portfolio-content {
-            padding: 1rem 1.5rem;
-            color: white;
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-        }
-        .portfolio-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 0.5rem;
-        }
-        .portfolio-content h3 {
-            font-size: 2rem;
-            margin: 0;
-            font-weight: 500;
-            letter-spacing: 0.5px;
-            color: rgba(255, 255, 255, 0.95);
-            line-height: 1.2;
-        }
-        .tech-stack {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            justify-content: flex-end;
-            max-width: 60%;
-        }
-        .tech-badge {
-            padding: 0.4rem 0.8rem;
-            border-radius: 8px;
-            background: rgba(0, 242, 254, 0.1);
-            font-size: 1.4rem;
+        .ai-card p {
+            font-size: 1.6rem;
             color: rgba(255, 255, 255, 0.8);
-            letter-spacing: 0.5px;
-            border: 1px solid rgba(0, 242, 254, 0.2);
-            white-space: nowrap;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+        .ai-card-cta {
+            margin-top: auto;
+            padding: 1.2rem 2.4rem;
+            background: linear-gradient(45deg, #00f2fe, #4facfe);
+            border: none;
+            border-radius: 8px;
+            color: #000;
+            font-size: 1.6rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+        }
+        .ai-card-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 242, 254, 0.3);
         }
         .section-title {
             text-align: center;
@@ -98,58 +83,17 @@
             margin: 0 auto;
             line-height: 1.4;
         }
-        @media (max-width: 1200px) {
-            .portfolio-grid {
-                grid-template-columns: repeat(3, 1fr);
-            }
-            .portfolio-item {
-                height: 300px;
-            }
-            .portfolio-item img {
-                height: 200px;
-            }
-        }
-        @media (max-width: 900px) {
-            .portfolio-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            .portfolio-item {
-                height: 320px;
-            }
-            .portfolio-item img {
-                height: 220px;
-            }
-            .section-title h1 {
-                font-size: 4rem;
-            }
-            .section-title p {
-                font-size: 1.8rem;
-            }
-        }
-        @media (max-width: 600px) {
+        @media (max-width: 768px) {
             .portfolio-grid {
                 grid-template-columns: 1fr;
             }
-            .portfolio-container {
-                padding: 1rem;
-            }
-            .portfolio-item {
-                height: 340px;
-            }
-            .portfolio-item img {
-                height: 240px;
-            }
+        }
+        @media (max-width: 600px) {
             .section-title h1 {
                 font-size: 3rem;
             }
             .section-title p {
                 font-size: 1.6rem;
-            }
-            .portfolio-content h3 {
-                font-size: 1.8rem;
-            }
-            .tech-badge {
-                font-size: 1.2rem;
             }
         }
         /* Modal Styles */
@@ -275,46 +219,59 @@
             </nav>
         </div>
     </header>
-
     <main style="padding-top: 80px;">
         <div class="section-title">
-            <h1>AI ソリューション</h1>
-            <p>最先端のAIテクノロジーによるモダンビジネスソリューション</p>
+            <h1>AIソリューション</h1>
+            <p>先進的なAI技術であなたのビジネスを強化</p>
         </div>
 
         <div class="portfolio-container">
             <div class="portfolio-grid">
-                <div class="portfolio-item" onclick="showPreview('https://sentiment-analyzer0611.vercel.app/', '感情分析')">
-                    <img src="images/ai_solutions/sentiment-analyzer.svg" alt="感情分析">
-                    <div class="portfolio-content">
-                        <div class="portfolio-header">
-                            <h3>感情分析</h3>
-                            <div class="tech-stack">
-                                <span class="tech-badge">AI</span>
-                                <span class="tech-badge">NLP</span>
-                            </div>
-                        </div>
-                    </div>
+                <div class="ai-card">
+                    <h3>高度な感情分析ツール</h3>
+                    <p>私の感情分析ツールでAIの力を発見してください。言語を自動的に検出し、インターフェースを適応させ、ユーザー入力から感情、心理、リスクの詳細な評価を提供する高度なツールです。動的な言語検出、直感的なビジュアル、実行可能な洞察を備えたこのアプリは、AI駆動ソリューションを構築する私の専門知識を示しています。</p>
+                    <p>このツールは、メンタルヘルスのモニタリング、顧客フィードバックの分析、市場調査、企業の健康管理に最適で、インテリジェントシステムがデータをどのように影響力のある結果に変えることができるかを証明しています。</p>
+                    <a href="https://shristyverse-sentiment-analyzer0611.netlify.app/" class="ai-card-cta">感情分析ツールを探索</a>
                 </div>
-            </div>
-        </div>
-
-        <!-- Modal -->
-        <div class="modal-overlay" id="modal-overlay">
-            <div class="modal">
-                <div class="modal-header">
-                    <h2 class="modal-title" id="modal-title">プロジェクトを選択してください</h2>
-                    <div class="modal-actions">
-                        <a href="#" class="visit-site" id="preview-link" target="_blank">サイトを訪問</a>
-                    </div>
-                    <div class="close-modal-container">
-                        <button class="close-modal" onclick="closeModal()">×</button>
-                    </div>
+                <div class="ai-card">
+                    <h3>高度なOCR</h3>
+                    <p>高度なOCR技術は、視覚データとのやり取りの方法を革命的に変えています。最先端のアルゴリズムを活用することで、画像からテキストを抽出して解釈するだけでなく、画像内の複雑なグラフやオブジェクトを分析して説明する独自の能力を持っています。これは様々な用途にとって不可欠なツールです。</p>
+                    <p>主な使用例の1つは文書のデジタル化の分野であり、物理的な文書をデジタル形式に変換する効率と精度を大幅に向上させます。これは、法務、医療、金融のように大量の書類を扱う業界にとって特に有益です。</p>
+                    <a href="https://shristyverse-advanced-ocr.netlify.app/" class="ai-card-cta">高度なOCRを発見</a>
                 </div>
-                <iframe class="modal-frame" id="preview-frame"></iframe>
             </div>
         </div>
     </main>
+
+    <script>
+        function showPreview(url, title) {
+            document.getElementById('modal-overlay').style.display = 'block';
+            document.getElementById('modal-frame').src = url;
+            document.querySelector('.modal-title').textContent = title;
+            document.getElementById('visit-site').href = url;
+        }
+
+        function closeModal() {
+            document.getElementById('modal-overlay').style.display = 'none';
+            document.getElementById('modal-frame').src = '';
+        }
+    </script>
+
+    <!-- Modal -->
+    <div class="modal-overlay" id="modal-overlay">
+        <div class="modal">
+            <div class="modal-header">
+                <h2 class="modal-title" id="modal-title">Select a project to preview</h2>
+                <div class="modal-actions">
+                    <a href="#" class="visit-site" id="preview-link" target="_blank">Visit Site</a>
+                </div>
+                <div class="close-modal-container">
+                    <button class="close-modal" onclick="closeModal()">×</button>
+                </div>
+            </div>
+            <iframe class="modal-frame" id="preview-frame"></iframe>
+        </div>
+    </div>
 
     <script>
         function showPreview(url, title) {

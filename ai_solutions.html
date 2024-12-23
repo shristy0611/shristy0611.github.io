@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>AI Solutions | Shristyverse</title>
+    <title>AI Solutions Portfolio | Shristyverse</title>
     <link rel="stylesheet" href="css/vendor.css">
     <link rel="stylesheet" href="css/styles.css">
     <style>
@@ -14,69 +14,54 @@
         }
         .portfolio-grid {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 1.5rem;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
         }
-        .portfolio-item {
-            position: relative;
-            border-radius: 12px;
-            overflow: hidden;
-            transition: all 0.3s ease;
+        .ai-card {
             background: rgba(255, 255, 255, 0.05);
-            cursor: pointer;
+            border-radius: 16px;
+            padding: 2.5rem;
+            transition: all 0.3s ease;
+            height: 100%;
             display: flex;
             flex-direction: column;
-            height: 280px;
+            position: relative;
+            overflow: hidden;
         }
-        .portfolio-item:hover {
+        .ai-card:hover {
             transform: translateY(-5px);
             background: rgba(255, 255, 255, 0.1);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
         }
-        .portfolio-item img {
-            width: 100%;
-            height: 180px;
-            object-fit: cover;
-            border-radius: 12px 12px 0 0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        .ai-card h3 {
+            font-size: 2.4rem;
+            margin-bottom: 1.5rem;
+            color: #00f2fe;
         }
-        .portfolio-content {
-            padding: 1rem 1.5rem;
-            color: white;
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-        }
-        .portfolio-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 0.5rem;
-        }
-        .portfolio-content h3 {
-            font-size: 2rem;
-            margin: 0;
-            font-weight: 500;
-            letter-spacing: 0.5px;
-            color: rgba(255, 255, 255, 0.95);
-            line-height: 1.2;
-        }
-        .tech-stack {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            justify-content: flex-end;
-            max-width: 60%;
-        }
-        .tech-badge {
-            padding: 0.4rem 0.8rem;
-            border-radius: 8px;
-            background: rgba(0, 242, 254, 0.1);
-            font-size: 1.4rem;
+        .ai-card p {
+            font-size: 1.6rem;
             color: rgba(255, 255, 255, 0.8);
-            letter-spacing: 0.5px;
-            border: 1px solid rgba(0, 242, 254, 0.2);
-            white-space: nowrap;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+        .ai-card-cta {
+            margin-top: auto;
+            padding: 1.2rem 2.4rem;
+            background: linear-gradient(45deg, #00f2fe, #4facfe);
+            border: none;
+            border-radius: 8px;
+            color: #000;
+            font-size: 1.6rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+        }
+        .ai-card-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 242, 254, 0.3);
         }
         .section-title {
             text-align: center;
@@ -98,58 +83,17 @@
             margin: 0 auto;
             line-height: 1.4;
         }
-        @media (max-width: 1200px) {
-            .portfolio-grid {
-                grid-template-columns: repeat(3, 1fr);
-            }
-            .portfolio-item {
-                height: 300px;
-            }
-            .portfolio-item img {
-                height: 200px;
-            }
-        }
-        @media (max-width: 900px) {
-            .portfolio-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            .portfolio-item {
-                height: 320px;
-            }
-            .portfolio-item img {
-                height: 220px;
-            }
-            .section-title h1 {
-                font-size: 4rem;
-            }
-            .section-title p {
-                font-size: 1.8rem;
-            }
-        }
-        @media (max-width: 600px) {
+        @media (max-width: 768px) {
             .portfolio-grid {
                 grid-template-columns: 1fr;
             }
-            .portfolio-container {
-                padding: 1rem;
-            }
-            .portfolio-item {
-                height: 340px;
-            }
-            .portfolio-item img {
-                height: 240px;
-            }
+        }
+        @media (max-width: 600px) {
             .section-title h1 {
                 font-size: 3rem;
             }
             .section-title p {
                 font-size: 1.6rem;
-            }
-            .portfolio-content h3 {
-                font-size: 1.8rem;
-            }
-            .tech-badge {
-                font-size: 1.2rem;
             }
         }
         /* Modal Styles */
@@ -195,14 +139,7 @@
             flex: 1;
             text-align: left;
         }
-        .modal-actions {
-            display: flex;
-            align-items: center;
-            gap: 2rem;
-            flex: 2;
-            justify-content: center;
-        }
-        .visit-btn {
+        .modal-header .visit-site {
             font-size: 2rem;
             color: rgba(255, 255, 255, 0.9);
             text-decoration: none;
@@ -212,15 +149,15 @@
             align-items: center;
             gap: 0.5rem;
         }
-        .visit-btn:hover {
+        .modal-header .visit-site:hover {
             color: #00f2fe;
         }
-        .visit-btn::after {
+        .modal-header .visit-site::after {
             content: '→';
             display: inline-block;
             transition: transform 0.3s ease;
         }
-        .visit-btn:hover::after {
+        .modal-header .visit-site:hover::after {
             transform: translateX(5px);
         }
         .close-modal-container {
@@ -265,11 +202,11 @@
         <div class="row s-header__inner width-sixteen-col">
             <div class="s-header__block">
                 <div class="s-header__logo">
-                    <a class="logo" href="index_ja.html">
-                        <img src="images/logo.svg" alt="ホームページ">
+                    <a class="logo" href="index.html">
+                        <img src="images/logo.svg" alt="Homepage">
                     </a>
                 </div>
-                <a class="s-header__menu-toggle" href="#0"><span>メニュー</span></a>
+                <a class="s-header__menu-toggle" href="#0"><span>Menu</span></a>
             </div>
             <nav class="s-header__nav">
                 <ul class="flex space-x-1 md:space-x-4 text-sm font-medium">
@@ -282,46 +219,59 @@
             </nav>
         </div>
     </header>
-
     <main style="padding-top: 80px;">
         <div class="section-title">
             <h1>AI Solutions</h1>
-            <p>Cutting-edge AI Technologies for Modern Business Solutions</p>
+            <p>Empowering Your Business with Advanced AI Technology</p>
         </div>
 
         <div class="portfolio-container">
             <div class="portfolio-grid">
-                <div class="portfolio-item" onclick="showPreview('https://sentiment-analyzer0611.vercel.app/', 'Sentiment Analyzer')">
-                    <img src="images/ai_solutions/sentiment-analyzer.svg" alt="Sentiment Analyzer">
-                    <div class="portfolio-content">
-                        <div class="portfolio-header">
-                            <h3>Sentiment Analyzer</h3>
-                            <div class="tech-stack">
-                                <span class="tech-badge">AI</span>
-                                <span class="tech-badge">NLP</span>
-                            </div>
-                        </div>
-                    </div>
+                <div class="ai-card">
+                    <h3>Advanced Sentiment Analyzer</h3>
+                    <p>Discover the power of AI with my Sentiment Analyzer—a sophisticated tool that automatically detects language, adapts its interface, and delivers in-depth emotional, psychological, and risk assessments from user input. Featuring dynamic language detection, intuitive visuals, and actionable insights, this app showcases my expertise in building AI-driven solutions. </p>
+                    <p>Ideal for mental health monitoring, customer feedback analysis, market research, and corporate wellness, it’s a testament to how intelligent systems can transform data into impactful results.</p>
+                    <a href="https://shristyverse-sentiment-analyzer0611.netlify.app/" class="ai-card-cta">Explore the Sentiment Analyzer</a>
                 </div>
-            </div>
-        </div>
-
-        <!-- Modal -->
-        <div class="modal-overlay" id="modal-overlay">
-            <div class="modal">
-                <div class="modal-header">
-                    <h2 class="modal-title" id="modal-title">Select a project to preview</h2>
-                    <div class="modal-actions">
-                        <a href="#" class="visit-btn" id="preview-link" target="_blank">Visit Site</a>
-                    </div>
-                    <div class="close-modal-container">
-                        <button class="close-modal" onclick="closeModal()">×</button>
-                    </div>
+                <div class="ai-card">
+                    <h3>Advanced OCR</h3>
+                    <p>Advanced OCR technology is revolutionizing the way we interact with visual data. By leveraging cutting-edge algorithms, it not only extracts and interprets text from images but also possesses the unique capability to analyze and describe intricate graphs and objects within those images. This makes it an essential tool for a variety of applications.</p>
+                    <p>One of the primary use cases is in the domain of document digitization, where it significantly enhances the efficiency and accuracy of converting physical documents into digital formats. This is particularly beneficial for industries that handle a high volume of paperwork, such as legal, healthcare, and finance.</p>
+                    <a href="https://shristyverse-advanced-ocr.netlify.app/" class="ai-card-cta">Discover Advanced OCR</a>
                 </div>
-                <iframe class="modal-frame" id="preview-frame"></iframe>
             </div>
         </div>
     </main>
+
+    <script>
+        function showPreview(url, title) {
+            document.getElementById('modal-overlay').style.display = 'block';
+            document.getElementById('modal-frame').src = url;
+            document.querySelector('.modal-title').textContent = title;
+            document.getElementById('visit-site').href = url;
+        }
+
+        function closeModal() {
+            document.getElementById('modal-overlay').style.display = 'none';
+            document.getElementById('modal-frame').src = '';
+        }
+    </script>
+
+    <!-- Modal -->
+    <div class="modal-overlay" id="modal-overlay">
+        <div class="modal">
+            <div class="modal-header">
+                <h2 class="modal-title" id="modal-title">Select a project to preview</h2>
+                <div class="modal-actions">
+                    <a href="#" class="visit-site" id="preview-link" target="_blank">Visit Site</a>
+                </div>
+                <div class="close-modal-container">
+                    <button class="close-modal" onclick="closeModal()">×</button>
+                </div>
+            </div>
+            <iframe class="modal-frame" id="preview-frame"></iframe>
+        </div>
+    </div>
 
     <script>
         function showPreview(url, title) {
@@ -360,6 +310,7 @@
             }
         });
     </script>
+
     <script src="js/plugins.js"></script>
     <script src="js/main.js"></script>
 </body>
