@@ -104,93 +104,41 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.85);
+            background: rgba(0, 0, 0, 0.8);
             z-index: 1000;
-            backdrop-filter: blur(5px);
+            justify-content: center;
+            align-items: center;
         }
         .modal {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
+            background: #1c1c1c;
+            padding: 20px;
+            border-radius: 10px;
             width: 90%;
             max-width: 1200px;
             height: 80vh;
-            background: #1a1a1a;
-            border-radius: 15px;
-            z-index: 1001;
-            display: flex;
-            flex-direction: column;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            position: relative;
         }
-        .modal-header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 0.5rem 1rem;
-            background: rgba(0, 0, 0, 0.8);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        .modal-title {
-            color: white;
-            margin: 0;
-            font-size: 2rem;
-            font-weight: 500;
-            flex: 1;
-            text-align: left;
-        }
-        .modal-header .visit-site {
-            font-size: 2rem;
-            color: rgba(255, 255, 255, 0.9);
-            text-decoration: none;
-            padding: 0 2rem;
-            transition: color 0.3s ease;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        .modal-header .visit-site:hover {
-            color: #00f2fe;
-        }
-        .modal-header .visit-site::after {
-            content: '→';
-            display: inline-block;
-            transition: transform 0.3s ease;
-        }
-        .modal-header .visit-site:hover::after {
-            transform: translateX(5px);
-        }
-        .close-modal-container {
-            flex: 1;
-            display: flex;
-            justify-content: flex-end;
+        .modal iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 8px;
         }
         .close-modal {
+            position: absolute;
+            top: -40px;
+            right: 0;
             background: rgba(255, 255, 255, 0.1);
             border: none;
             color: white;
             font-size: 1.6rem;
+            padding: 8px 16px;
+            border-radius: 4px;
             cursor: pointer;
-            padding: 0.5rem;
-            border-radius: 12px;
-            transition: all 0.2s ease;
-            width: 40px;
-            height: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            transition: all 0.3s ease;
         }
         .close-modal:hover {
             background: rgba(255, 255, 255, 0.2);
-            transform: scale(1.05);
-        }
-        .modal-frame {
-            flex-grow: 1;
-            border: none;
-            border-radius: 0 0 15px 15px;
-            background: #fff;
-            width: 100%;
-            height: 100%;
         }
         body {
             background: linear-gradient(135deg, #000000, #1a1a1a);
@@ -228,84 +176,52 @@
         <div class="portfolio-container">
             <div class="portfolio-grid">
                 <div class="ai-card">
-                    <h3>高度な感情分析ツール</h3>
-                    <p>私の感情分析ツールでAIの力を発見してください。言語を自動的に検出し、インターフェースを適応させ、ユーザー入力から感情、心理、リスクの詳細な評価を提供する高度なツールです。動的な言語検出、直感的なビジュアル、実行可能な洞察を備えたこのアプリは、AI駆動ソリューションを構築する私の専門知識を示しています。</p>
-                    <p>このツールは、メンタルヘルスのモニタリング、顧客フィードバックの分析、市場調査、企業の健康管理に最適で、インテリジェントシステムがデータをどのように影響力のある結果に変えることができるかを証明しています。</p>
-                    <a href="https://shristyverse-sentiment-analyzer0611.netlify.app/" class="ai-card-cta">感情分析ツールを探索</a>
+                    <h3>最先端の感情分析ツール「Advanced Sentiment Analyzer」をご紹介します</h3>
+                    <p>「Advanced Sentiment Analyzer」とは、文章や発言に含まれる感情を高度なAI技術で分析し、単純なポジティブ・ネガティブだけでなく、複雑な心情や潜在的リスクをリアルタイムで捉える次世代の感情分析ツールです。分析結果はわかりやすいビジュアルや指標として提示されるため、対策や改善策の検討がスムーズに行えます。</p>
+                    <a href="#" class="ai-card-cta" onclick="showPreview('https://shristyverse-sentiment-analyzer0611.netlify.app/', '感情分析ツール'); return false;">プレビュー</a>
                 </div>
                 <div class="ai-card">
-                    <h3>高度なOCR</h3>
-                    <p>高度なOCR技術は、視覚データとのやり取りの方法を革命的に変えています。最先端のアルゴリズムを活用することで、画像からテキストを抽出して解釈するだけでなく、画像内の複雑なグラフやオブジェクトを分析して説明する独自の能力を持っています。これは様々な用途にとって不可欠なツールです。</p>
-                    <p>主な使用例の1つは文書のデジタル化の分野であり、物理的な文書をデジタル形式に変換する効率と精度を大幅に向上させます。これは、法務、医療、金融のように大量の書類を扱う業界にとって特に有益です。</p>
-                    <a href="https://shristyverse-advanced-ocr.netlify.app/" class="ai-card-cta">高度なOCRを発見</a>
+                    <h3>AI搭載の高度なOCRツール — 画像からのテキスト抽出と詳細な画像解析</h3>
+                    <p>AI-Powered OCRは、画像内のテキストを迅速かつ正確に抽出するだけでなく、画像を詳細に分析し、オブジェクトの検出や内容の説明を行う先進的なOCRソリューションです。高度な画像認識技術と機械学習アルゴリズムを活用し、文書、写真、図表など多様な画像形式に対応。抽出されたテキストはもちろん、画像内容に関する深い洞察を提供し、業務効率の向上やデータ活用の最適化を実現します。</p>
+                    <a href="#" class="ai-card-cta" onclick="showPreview('https://shristyverse-advanced-ocr0611.netlify.app/', '高度なOCR'); return false;">プレビュー</a>
+                </div>
+                <div class="ai-card">
+                    <h3>スマートエージェント — パーソナライズされた専門ガイダンスの提供</h3>
+                    <p>スマートエージェントは、個別のニーズに応じた専門アドバイザーエージェントを搭載したインテリジェントなチャットボットプラットフォームです。食事、健康、旅行、文化など、特定の分野に特化して訓練されたAIエージェントから、専門的な推奨やアドバイスを受け取ることができます。深いドメイン知識と自然な会話能力を融合させたパーソナライズされたアドバイスを通じて、ユーザー体験をより豊かにします。</p>
+                    <a href="#" class="ai-card-cta" onclick="showPreview('https://shristyverse-smart-agent0611.netlify.app/', 'スマートエージェント'); return false;">プレビュー</a>
                 </div>
             </div>
         </div>
     </main>
 
-    <script>
-        function showPreview(url, title) {
-            document.getElementById('modal-overlay').style.display = 'block';
-            document.getElementById('modal-frame').src = url;
-            document.querySelector('.modal-title').textContent = title;
-            document.getElementById('visit-site').href = url;
-        }
-
-        function closeModal() {
-            document.getElementById('modal-overlay').style.display = 'none';
-            document.getElementById('modal-frame').src = '';
-        }
-    </script>
-
     <!-- Modal -->
     <div class="modal-overlay" id="modal-overlay">
         <div class="modal">
-            <div class="modal-header">
-                <h2 class="modal-title" id="modal-title">Select a project to preview</h2>
-                <div class="modal-actions">
-                    <a href="#" class="visit-site" id="preview-link" target="_blank">Visit Site</a>
-                </div>
-                <div class="close-modal-container">
-                    <button class="close-modal" onclick="closeModal()">×</button>
-                </div>
-            </div>
-            <iframe class="modal-frame" id="preview-frame"></iframe>
+            <button class="close-modal" onclick="closeModal()">閉じる</button>
+            <iframe id="preview-iframe" src="" title="プレビュー"></iframe>
         </div>
     </div>
 
     <script>
         function showPreview(url, title) {
             const modal = document.getElementById('modal-overlay');
-            const frame = document.getElementById('preview-frame');
-            const modalTitle = document.getElementById('modal-title');
-            const previewLink = document.getElementById('preview-link');
-            
-            frame.src = url;
-            modalTitle.textContent = title;
-            previewLink.href = url;
-            modal.style.display = 'block';
+            const iframe = document.getElementById('preview-iframe');
+            iframe.src = url;
+            modal.style.display = 'flex';
             document.body.style.overflow = 'hidden';
         }
 
         function closeModal() {
             const modal = document.getElementById('modal-overlay');
-            const frame = document.getElementById('preview-frame');
-            
+            const iframe = document.getElementById('preview-iframe');
+            iframe.src = '';
             modal.style.display = 'none';
-            frame.src = '';
             document.body.style.overflow = 'auto';
         }
 
         // Close modal when clicking outside
         document.getElementById('modal-overlay').addEventListener('click', function(e) {
             if (e.target === this) {
-                closeModal();
-            }
-        });
-
-        // Close modal with escape key
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') {
                 closeModal();
             }
         });

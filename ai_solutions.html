@@ -104,93 +104,41 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.85);
+            background: rgba(0, 0, 0, 0.8);
             z-index: 1000;
-            backdrop-filter: blur(5px);
+            justify-content: center;
+            align-items: center;
         }
         .modal {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
+            background: #1c1c1c;
+            padding: 20px;
+            border-radius: 10px;
             width: 90%;
             max-width: 1200px;
             height: 80vh;
-            background: #1a1a1a;
-            border-radius: 15px;
-            z-index: 1001;
-            display: flex;
-            flex-direction: column;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            position: relative;
         }
-        .modal-header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 0.5rem 1rem;
-            background: rgba(0, 0, 0, 0.8);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        .modal-title {
-            color: white;
-            margin: 0;
-            font-size: 2rem;
-            font-weight: 500;
-            flex: 1;
-            text-align: left;
-        }
-        .modal-header .visit-site {
-            font-size: 2rem;
-            color: rgba(255, 255, 255, 0.9);
-            text-decoration: none;
-            padding: 0 2rem;
-            transition: color 0.3s ease;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        .modal-header .visit-site:hover {
-            color: #00f2fe;
-        }
-        .modal-header .visit-site::after {
-            content: '→';
-            display: inline-block;
-            transition: transform 0.3s ease;
-        }
-        .modal-header .visit-site:hover::after {
-            transform: translateX(5px);
-        }
-        .close-modal-container {
-            flex: 1;
-            display: flex;
-            justify-content: flex-end;
+        .modal iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 8px;
         }
         .close-modal {
+            position: absolute;
+            top: -40px;
+            right: 0;
             background: rgba(255, 255, 255, 0.1);
             border: none;
             color: white;
             font-size: 1.6rem;
+            padding: 8px 16px;
+            border-radius: 4px;
             cursor: pointer;
-            padding: 0.5rem;
-            border-radius: 12px;
-            transition: all 0.2s ease;
-            width: 40px;
-            height: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            transition: all 0.3s ease;
         }
         .close-modal:hover {
             background: rgba(255, 255, 255, 0.2);
-            transform: scale(1.05);
-        }
-        .modal-frame {
-            flex-grow: 1;
-            border: none;
-            border-radius: 0 0 15px 15px;
-            background: #fff;
-            width: 100%;
-            height: 100%;
         }
         body {
             background: linear-gradient(135deg, #000000, #1a1a1a);
@@ -228,84 +176,52 @@
         <div class="portfolio-container">
             <div class="portfolio-grid">
                 <div class="ai-card">
-                    <h3>Advanced Sentiment Analyzer</h3>
-                    <p>Discover the power of AI with my Sentiment Analyzer—a sophisticated tool that automatically detects language, adapts its interface, and delivers in-depth emotional, psychological, and risk assessments from user input. Featuring dynamic language detection, intuitive visuals, and actionable insights, this app showcases my expertise in building AI-driven solutions. </p>
-                    <p>Ideal for mental health monitoring, customer feedback analysis, market research, and corporate wellness, it’s a testament to how intelligent systems can transform data into impactful results.</p>
-                    <a href="https://shristyverse-sentiment-analyzer0611.netlify.app/" class="ai-card-cta">Explore the Sentiment Analyzer</a>
+                    <h3>Introducing My Advanced Sentiment Analyzer—Your Gateway to Deeper Emotional Insights</h3>
+                    <p>Advanced Sentiment Analyzer is a cutting-edge AI tool that goes beyond mere positivity or negativity. Harnessing powerful NLP and machine learning techniques, this analyzer delves into complex emotional states, identifies potential risks, and offers actionable insights—all in real time. Additionally, it supports multiple languages and cultural contexts, enabling a global understanding of sentiments. Whether for business intelligence or enhancing customer satisfaction, it empowers strategic decision-making with comprehensive emotional analysis.</p>
+                    <a href="#" class="ai-card-cta" onclick="showPreview('https://shristyverse-sentiment-analyzer0611.netlify.app/', 'Advanced Sentiment Analyzer'); return false;">Preview</a>
                 </div>
                 <div class="ai-card">
-                    <h3>Advanced OCR</h3>
-                    <p>Advanced OCR technology is revolutionizing the way we interact with visual data. By leveraging cutting-edge algorithms, it not only extracts and interprets text from images but also possesses the unique capability to analyze and describe intricate graphs and objects within those images. This makes it an essential tool for a variety of applications.</p>
-                    <p>One of the primary use cases is in the domain of document digitization, where it significantly enhances the efficiency and accuracy of converting physical documents into digital formats. This is particularly beneficial for industries that handle a high volume of paperwork, such as legal, healthcare, and finance.</p>
-                    <a href="https://shristyverse-advanced-ocr.netlify.app/" class="ai-card-cta">Discover Advanced OCR</a>
+                    <h3>Introducing AI-Powered OCR—Advanced Text Extraction and Comprehensive Image Analysis</h3>
+                    <p>AI-Powered OCR is a cutting-edge solution that not only extracts text from images with exceptional speed and accuracy but also provides detailed image analysis by detecting objects and describing their contents. Leveraging advanced image recognition technologies and machine learning algorithms, this OCR tool handles a wide variety of image formats, including documents, photographs, and charts. Beyond text extraction, it delivers deep insights into image content, enhancing operational efficiency and optimizing data utilization.</p>
+                    <a href="#" class="ai-card-cta" onclick="showPreview('https://shristyverse-advanced-ocr0611.netlify.app/', 'Advanced OCR'); return false;">Preview</a>
+                </div>
+                <div class="ai-card">
+                    <h3>Introducing Smart Agent—Your Personalized Advisor for Expert Guidance</h3>
+                    <p>Smart Agent is an intelligent chatbot platform featuring specialized advisor agents tailored to provide personalized guidance. Receive expert recommendations on food, health, travel, culture, and more from AI agents trained in specific domains. Experience tailored advice that seamlessly combines deep domain expertise with natural conversational abilities, enhancing your decision-making and enriching your user experience.</p>
+                    <a href="#" class="ai-card-cta" onclick="showPreview('https://shristyverse-smart-agent0611.netlify.app/', 'Smart Agent'); return false;">Preview</a>
                 </div>
             </div>
         </div>
     </main>
 
-    <script>
-        function showPreview(url, title) {
-            document.getElementById('modal-overlay').style.display = 'block';
-            document.getElementById('modal-frame').src = url;
-            document.querySelector('.modal-title').textContent = title;
-            document.getElementById('visit-site').href = url;
-        }
-
-        function closeModal() {
-            document.getElementById('modal-overlay').style.display = 'none';
-            document.getElementById('modal-frame').src = '';
-        }
-    </script>
-
     <!-- Modal -->
     <div class="modal-overlay" id="modal-overlay">
         <div class="modal">
-            <div class="modal-header">
-                <h2 class="modal-title" id="modal-title">Select a project to preview</h2>
-                <div class="modal-actions">
-                    <a href="#" class="visit-site" id="preview-link" target="_blank">Visit Site</a>
-                </div>
-                <div class="close-modal-container">
-                    <button class="close-modal" onclick="closeModal()">×</button>
-                </div>
-            </div>
-            <iframe class="modal-frame" id="preview-frame"></iframe>
+            <button class="close-modal" onclick="closeModal()">Close</button>
+            <iframe id="preview-iframe" src="" title="Preview"></iframe>
         </div>
     </div>
 
     <script>
         function showPreview(url, title) {
             const modal = document.getElementById('modal-overlay');
-            const frame = document.getElementById('preview-frame');
-            const modalTitle = document.getElementById('modal-title');
-            const previewLink = document.getElementById('preview-link');
-            
-            frame.src = url;
-            modalTitle.textContent = title;
-            previewLink.href = url;
-            modal.style.display = 'block';
+            const iframe = document.getElementById('preview-iframe');
+            iframe.src = url;
+            modal.style.display = 'flex';
             document.body.style.overflow = 'hidden';
         }
 
         function closeModal() {
             const modal = document.getElementById('modal-overlay');
-            const frame = document.getElementById('preview-frame');
-            
+            const iframe = document.getElementById('preview-iframe');
+            iframe.src = '';
             modal.style.display = 'none';
-            frame.src = '';
             document.body.style.overflow = 'auto';
         }
 
         // Close modal when clicking outside
         document.getElementById('modal-overlay').addEventListener('click', function(e) {
             if (e.target === this) {
-                closeModal();
-            }
-        });
-
-        // Close modal with escape key
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') {
                 closeModal();
             }
         });
