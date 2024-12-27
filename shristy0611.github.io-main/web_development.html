@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Web Development Portfolio | Shristyverse</title>
+    <link rel="stylesheet" href="css/vendor.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .portfolio-container {
+            padding: 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+        }
+        .portfolio-item {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            background: rgba(255, 255, 255, 0.05);
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            height: 280px;
+        }
+        .portfolio-item:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        .portfolio-item img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 12px 12px 0 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .portfolio-content {
+            padding: 1rem 1.5rem;
+            color: white;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .portfolio-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.5rem;
+        }
+        .portfolio-content h3 {
+            font-size: 2rem;
+            margin: 0;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            color: rgba(255, 255, 255, 0.95);
+            line-height: 1.2;
+        }
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            justify-content: flex-end;
+            max-width: 60%;
+        }
+        .tech-badge {
+            padding: 0.4rem 0.8rem;
+            border-radius: 8px;
+            background: rgba(0, 242, 254, 0.1);
+            font-size: 1.4rem;
+            color: rgba(255, 255, 255, 0.8);
+            letter-spacing: 0.5px;
+            border: 1px solid rgba(0, 242, 254, 0.2);
+            white-space: nowrap;
+        }
+        .section-title {
+            text-align: center;
+            margin: 4rem 0 3rem;
+            color: white;
+        }
+        .section-title h1 {
+            font-size: 5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, #fff, #00f2fe);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1.2;
+        }
+        .section-title p {
+            font-size: 2.2rem;
+            color: rgba(255, 255, 255, 0.7);
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.4;
+        }
+        @media (max-width: 1200px) {
+            .portfolio-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            .portfolio-item {
+                height: 300px;
+            }
+            .portfolio-item img {
+                height: 200px;
+            }
+        }
+        @media (max-width: 900px) {
+            .portfolio-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .portfolio-item {
+                height: 320px;
+            }
+            .portfolio-item img {
+                height: 220px;
+            }
+            .section-title h1 {
+                font-size: 4rem;
+            }
+            .section-title p {
+                font-size: 1.8rem;
+            }
+        }
+        @media (max-width: 600px) {
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+            .portfolio-container {
+                padding: 1rem;
+            }
+            .portfolio-item {
+                height: 340px;
+            }
+            .portfolio-item img {
+                height: 240px;
+            }
+            .section-title h1 {
+                font-size: 3rem;
+            }
+            .section-title p {
+                font-size: 1.6rem;
+            }
+            .portfolio-content h3 {
+                font-size: 1.8rem;
+            }
+            .tech-badge {
+                font-size: 1.2rem;
+            }
+        }
+        /* Modal Styles */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            z-index: 1000;
+            backdrop-filter: blur(5px);
+        }
+        .modal {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 90%;
+            max-width: 1200px;
+            height: 80vh;
+            background: #1a1a1a;
+            border-radius: 15px;
+            z-index: 1001;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        }
+        .modal-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0.5rem 1rem;
+            background: rgba(0, 0, 0, 0.8);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .modal-title {
+            color: white;
+            margin: 0;
+            font-size: 2rem;
+            font-weight: 500;
+            flex: 1;
+            text-align: left;
+        }
+        .modal-header .visit-site {
+            font-size: 2rem;
+            color: rgba(255, 255, 255, 0.9);
+            text-decoration: none;
+            padding: 0 2rem;
+            transition: color 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .modal-header .visit-site:hover {
+            color: #00f2fe;
+        }
+        .modal-header .visit-site::after {
+            content: '→';
+            display: inline-block;
+            transition: transform 0.3s ease;
+        }
+        .modal-header .visit-site:hover::after {
+            transform: translateX(5px);
+        }
+        .close-modal-container {
+            flex: 1;
+            display: flex;
+            justify-content: flex-end;
+        }
+        .close-modal {
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            color: white;
+            font-size: 1.6rem;
+            cursor: pointer;
+            padding: 0.5rem;
+            border-radius: 12px;
+            transition: all 0.2s ease;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .close-modal:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: scale(1.05);
+        }
+        .modal-frame {
+            flex-grow: 1;
+            border: none;
+            border-radius: 0 0 15px 15px;
+            background: #fff;
+            width: 100%;
+            height: 100%;
+        }
+        body {
+            background: linear-gradient(135deg, #000000, #1a1a1a);
+        }
+    </style>
+</head>
+<body>
+    <header class="s-header" style="position: fixed; top: 0; width: 100%; background-image: linear-gradient(to bottom, rgba(0,0,0,0.9), rgba(0,0,0,0.9));">
+        <div class="row s-header__inner width-sixteen-col">
+            <div class="s-header__block">
+                <div class="s-header__logo">
+                    <a class="logo" href="index.html">
+                        <img src="images/logo.svg" alt="Homepage">
+                    </a>
+                </div>
+                <a class="s-header__menu-toggle" href="#0"><span>Menu</span></a>
+            </div>
+            <nav class="s-header__nav">
+                <ul class="flex space-x-1 md:space-x-4 text-sm font-medium">
+                    <li><a href="index.html#web_development" class="text-gray-300 hover:text-white transition-colors duration-200">Web Development</a></li>
+                    <li><a href="index.html#ai_solutions" class="text-gray-300 hover:text-white transition-colors duration-200">AI Solutions</a></li>
+                    <li><a href="index.html#about" class="text-gray-300 hover:text-white transition-colors duration-200">About Us</a></li>
+                    <li><a href="index.html#contact" class="text-gray-300 hover:text-white transition-colors duration-200">Contact</a></li>
+                    <li><a href="web_development_ja.html" class="text-gray-300 hover:text-white transition-colors duration-200">日本語</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main style="padding-top: 80px;">
+        <div class="section-title">
+            <h1>Web Development Portfolio</h1>
+            <p>Innovative Solutions for Modern Business</p>
+        </div>
+
+        <div class="portfolio-container">
+            <div class="portfolio-grid">
+                <div class="portfolio-item" onclick="showPreview('https://www.shristyverse.site/italiano0611/', 'Italiano')">
+                    <img src="images/websites/italiano.jpg" alt="Italiano Restaurant">
+                    <div class="portfolio-content">
+                        <div class="portfolio-header">
+                            <h3>Italiano</h3>
+                            <div class="tech-stack">
+                                <span class="tech-badge">HTML5</span>
+                                <span class="tech-badge">CSS3</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" onclick="showPreview('https://www.shristyverse.site/vegefoods0611/', 'VegeFoods')">
+                    <img src="images/websites/vegefoods.jpg" alt="VegeFoods">
+                    <div class="portfolio-content">
+                        <div class="portfolio-header">
+                            <h3>VegeFoods</h3>
+                            <div class="tech-stack">
+                                <span class="tech-badge">React</span>
+                                <span class="tech-badge">Node.js</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" onclick="showPreview('https://www.shristyverse.site/cakezone0611/', 'CakeZone')">
+                    <img src="images/websites/cakezone.jpg" alt="CakeZone">
+                    <div class="portfolio-content">
+                        <div class="portfolio-header">
+                            <h3>CakeZone</h3>
+                            <div class="tech-stack">
+                                <span class="tech-badge">Vue.js</span>
+                                <span class="tech-badge">CSS Grid</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" onclick="showPreview('https://www.shristyverse.site/startup0611/', 'Startup')">
+                    <img src="images/websites/startup.jpg" alt="Startup">
+                    <div class="portfolio-content">
+                        <div class="portfolio-header">
+                            <h3>Startup</h3>
+                            <div class="tech-stack">
+                                <span class="tech-badge">React</span>
+                                <span class="tech-badge">TypeScript</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" onclick="showPreview('https://www.shristyverse.site/finanzaa0611/', 'Finanzaa')">
+                    <img src="images/websites/finanzaa.jpg" alt="Finanzaa">
+                    <div class="portfolio-content">
+                        <div class="portfolio-header">
+                            <h3>Finanzaa</h3>
+                            <div class="tech-stack">
+                                <span class="tech-badge">Angular</span>
+                                <span class="tech-badge">D3.js</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" onclick="showPreview('https://www.shristyverse.site/studio0611/', 'Studio')">
+                    <img src="images/websites/studio.jpg" alt="Studio">
+                    <div class="portfolio-content">
+                        <div class="portfolio-header">
+                            <h3>Studio</h3>
+                            <div class="tech-stack">
+                                <span class="tech-badge">Three.js</span>
+                                <span class="tech-badge">GSAP</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" onclick="showPreview('https://www.shristyverse.site/revolve0611/', 'Revolve')">
+                    <img src="images/websites/revolve.jpg" alt="Revolve">
+                    <div class="portfolio-content">
+                        <div class="portfolio-header">
+                            <h3>Revolve</h3>
+                            <div class="tech-stack">
+                                <span class="tech-badge">Gatsby</span>
+                                <span class="tech-badge">GraphQL</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" onclick="showPreview('https://www.shristyverse.site/harcut0611/', 'Haircut')">
+                    <img src="images/websites/haircut.jpg" alt="Haircut">
+                    <div class="portfolio-content">
+                        <div class="portfolio-header">
+                            <h3>Haircut</h3>
+                            <div class="tech-stack">
+                                <span class="tech-badge">Next.js</span>
+                                <span class="tech-badge">Prisma</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" onclick="showPreview('https://www.shristyverse.site/eduwell0611/', 'EduWell')">
+                    <img src="images/websites/eduwell.jpg" alt="EduWell">
+                    <div class="portfolio-content">
+                        <div class="portfolio-header">
+                            <h3>EduWell</h3>
+                            <div class="tech-stack">
+                                <span class="tech-badge">Vue.js</span>
+                                <span class="tech-badge">Node.js</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal -->
+        <div class="modal-overlay" id="modal-overlay">
+            <div class="modal">
+                <div class="modal-header">
+                    <h2 class="modal-title" id="modal-title">Select a project to preview</h2>
+                    <div class="modal-actions">
+                        <a href="#" class="visit-site" id="preview-link" target="_blank">Visit Site</a>
+                    </div>
+                    <div class="close-modal-container">
+                        <button class="close-modal" onclick="closeModal()">×</button>
+                    </div>
+                </div>
+                <iframe class="modal-frame" id="preview-frame"></iframe>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        function showPreview(url, title) {
+            const modal = document.getElementById('modal-overlay');
+            const frame = document.getElementById('preview-frame');
+            const modalTitle = document.getElementById('modal-title');
+            const previewLink = document.getElementById('preview-link');
+            
+            frame.src = url;
+            modalTitle.textContent = title;
+            previewLink.href = url;
+            modal.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('modal-overlay');
+            const frame = document.getElementById('preview-frame');
+            
+            modal.style.display = 'none';
+            frame.src = '';
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal when clicking outside
+        document.getElementById('modal-overlay').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
+
+        // Close modal with escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeModal();
+            }
+        });
+    </script>
+
+    <script src="js/plugins.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
