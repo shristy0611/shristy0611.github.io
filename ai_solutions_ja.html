@@ -6,6 +6,8 @@
     <title>AI Solutions Portfolio | Shristyverse</title>
     <link rel="stylesheet" href="css/vendor.css">
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/modal.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
         .portfolio-container {
             padding: 2rem;
@@ -49,13 +51,11 @@
             padding: 1.2rem 2.4rem;
             background: linear-gradient(45deg, #00f2fe, #4facfe);
             border: none;
-            border-radius: 8px;
-            color: #000;
+            color: white;
             font-size: 1.6rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
+            border-radius: 4px;
             text-decoration: none;
+            transition: all 0.3s ease;
             display: inline-block;
             text-align: center;
         }
@@ -83,7 +83,7 @@
             margin: 0 auto;
             line-height: 1.4;
         }
-        @media (max-width: 768px) {
+        @media (max-width: 900px) {
             .portfolio-grid {
                 grid-template-columns: 1fr;
             }
@@ -95,50 +95,6 @@
             .section-title p {
                 font-size: 1.6rem;
             }
-        }
-        /* Modal Styles */
-        .modal-overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.8);
-            z-index: 1000;
-            justify-content: center;
-            align-items: center;
-        }
-        .modal {
-            background: #1c1c1c;
-            padding: 20px;
-            border-radius: 10px;
-            width: 90%;
-            max-width: 1200px;
-            height: 80vh;
-            position: relative;
-        }
-        .modal iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-            border-radius: 8px;
-        }
-        .close-modal {
-            position: absolute;
-            top: -40px;
-            right: 0;
-            background: rgba(255, 255, 255, 0.1);
-            border: none;
-            color: white;
-            font-size: 1.6rem;
-            padding: 8px 16px;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        .close-modal:hover {
-            background: rgba(255, 255, 255, 0.2);
         }
         body {
             background: linear-gradient(135deg, #000000, #1a1a1a);
@@ -176,18 +132,27 @@
         <div class="portfolio-container">
             <div class="portfolio-grid">
                 <div class="ai-card">
-                    <h3>最先端の感情分析ツール「Advanced Sentiment Analyzer」をご紹介します</h3>
-                    <p>「Advanced Sentiment Analyzer」とは、文章や発言に含まれる感情を高度なAI技術で分析し、単純なポジティブ・ネガティブだけでなく、複雑な心情や潜在的リスクをリアルタイムで捉える次世代の感情分析ツールです。分析結果はわかりやすいビジュアルや指標として提示されるため、対策や改善策の検討がスムーズに行えます。</p>
+                    <h3>高性能AIを用いたパーソナルレコメンダーシステムのご紹介——AIによるパーソナライズでユーザー体験を一新</h3>
+                    <p>本システムは、企業とお客様がより深くつながるための画期的なソリューションです。高度なAIアルゴリズムを用いてユーザーの好みを素早く分析し、関連性の高いコンテンツや商品をリアルタイムで提案します。</p>
+                    <p>さらに、モダンでレスポンシブなデザインを採用していて、多彩なカテゴリーに柔軟に対応でき、大規模な運用にも耐えうるスケーラブルなアーキテクチャを備えています。エラーに強い設計となっており、サービスが途切れることなく安定して稼働できるのも特長です。</p>
+                    <a href="#" class="ai-card-cta" onclick="showPreview('https://shristyverse-personal-recommender0611.netlify.app/', 'AI-Powered Personal Recommender System'); return false;">プレビュー</a>
+                </div>
+                <div class="ai-card">
+                    <h3>最先端の感情分析ツール「Advanced Sentiment Analyzer」のご紹介——AIによる深層分析で複雑な感情をリアルタイムに把握</h3>
+                    <p>本ツールは、文章や発言に含まれる感情を高度なAIアルゴリズムで解析し、単純なポジティブ・ネガティブだけでなく、隠れたリスクや複雑な心理状態まで即座に見極める次世代型の感情分析ソリューションです。</p>
+                    <p>分析結果はわかりやすい指標やビジュアルとして提示されるため、対策や改善策の検討がスムーズに行えます。迅速なリスク管理や顧客満足度の向上など、多方面の活用につながり、ビジネス全体の成果向上にも大きく貢献します。</p>
                     <a href="#" class="ai-card-cta" onclick="showPreview('https://shristyverse-sentiment-analyzer0611.netlify.app/', '感情分析ツール'); return false;">プレビュー</a>
                 </div>
                 <div class="ai-card">
-                    <h3>AI搭載の高度なOCRツール — 画像からのテキスト抽出と詳細な画像解析</h3>
-                    <p>AI-Powered OCRは、画像内のテキストを迅速かつ正確に抽出するだけでなく、画像を詳細に分析し、オブジェクトの検出や内容の説明を行う先進的なOCRソリューションです。高度な画像認識技術と機械学習アルゴリズムを活用し、文書、写真、図表など多様な画像形式に対応。抽出されたテキストはもちろん、画像内容に関する深い洞察を提供し、業務効率の向上やデータ活用の最適化を実現します。</p>
+                    <h3>AI搭載の高度なOCRツール――画像からのテキスト抽出と詳細な画像解析で新たな価値を創出</h3>
+                    <p>このOCRツールは、画像内の文字をスピーディかつ正確に読み取る先進的なソリューションです。高度なAIアルゴリズムを取り入れることで、テキストの抽出だけでなく、画像中のオブジェクトを検出したり内容を説明したりと、多角的な解析を実現します。  </p>
+                    <p>さらに、文書や写真、図表といった幅広い形式に柔軟に対応し、抽出結果はもちろん、画像から得られる深い洞察を組み合わせることで業務効率を飛躍的に向上させます。機械学習ベースのモデルを採用していて、使うほどに精度が高まり、企業のあらゆる場面で最適なデータ活用をサポートします。</p>
                     <a href="#" class="ai-card-cta" onclick="showPreview('https://shristyverse-advanced-ocr0611.netlify.app/', '高度なOCR'); return false;">プレビュー</a>
                 </div>
                 <div class="ai-card">
-                    <h3>スマートエージェント — パーソナライズされた専門ガイダンスの提供</h3>
-                    <p>スマートエージェントは、個別のニーズに応じた専門アドバイザーエージェントを搭載したインテリジェントなチャットボットプラットフォームです。食事、健康、旅行、文化など、特定の分野に特化して訓練されたAIエージェントから、専門的な推奨やアドバイスを受け取ることができます。深いドメイン知識と自然な会話能力を融合させたパーソナライズされたアドバイスを通じて、ユーザー体験をより豊かにします。</p>
+                    <h3>スマートエージェント —— パーソナライズされた専門ガイダンスの提供</h3>
+                    <p>スマートエージェントは、一人ひとりのニーズに合わせて最適化された専門家レベルのアドバイスを提供する、最新の知的チャットボットプラットフォームです。食事、健康、旅行、文化など、各ジャンルに特化して学習したAIエージェントが、ユーザーの状況に応じた推奨やアドバイスをリアルタイムで行います。  </p>
+                    <p>さらに、深いドメイン知識と自然な対話能力を組み合わせることで、これまでにない質の高いパーソナルガイダンスを実現しました。高度なパーソナライズ機能により、ユーザーは必要な情報をスムーズに得ることができ、あらゆるライフスタイルに対応した豊かな体験をサポートします。</p>
                     <a href="#" class="ai-card-cta" onclick="showPreview('https://shristyverse-smart-agent0611.netlify.app/', 'スマートエージェント'); return false;">プレビュー</a>
                 </div>
             </div>
@@ -197,8 +162,10 @@
     <!-- Modal -->
     <div class="modal-overlay" id="modal-overlay">
         <div class="modal">
-            <button class="close-modal" onclick="closeModal()">閉じる</button>
-            <iframe id="preview-iframe" src="" title="プレビュー"></iframe>
+            <button class="modal-btn" onclick="closeModal()">
+                <i class="fas fa-times"></i>
+            </button>
+            <iframe id="preview-iframe" src="" title="Preview"></iframe>
         </div>
     </div>
 
@@ -229,5 +196,7 @@
 
     <script src="js/plugins.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/modal.js"></script>
+    <script src="https://kit.fontawesome.com/3a9b2795f3.js" crossorigin="anonymous"></script>
 </body>
 </html>

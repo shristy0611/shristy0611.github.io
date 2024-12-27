@@ -6,6 +6,8 @@
     <title>AI Solutions Portfolio | Shristyverse</title>
     <link rel="stylesheet" href="css/vendor.css">
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/modal.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
         .portfolio-container {
             padding: 2rem;
@@ -16,6 +18,26 @@
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 2rem;
+        }
+        .section-title {
+            text-align: center;
+            margin: 4rem 0 3rem;
+            color: white;
+        }
+        .section-title h1 {
+            font-size: 5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, #fff, #00f2fe);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1.2;
+        }
+        .section-title p {
+            font-size: 2.2rem;
+            color: rgba(255, 255, 255, 0.7);
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.4;
         }
         .ai-card {
             background: rgba(255, 255, 255, 0.05);
@@ -49,13 +71,11 @@
             padding: 1.2rem 2.4rem;
             background: linear-gradient(45deg, #00f2fe, #4facfe);
             border: none;
-            border-radius: 8px;
-            color: #000;
+            color: white;
             font-size: 1.6rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
+            border-radius: 4px;
             text-decoration: none;
+            transition: all 0.3s ease;
             display: inline-block;
             text-align: center;
         }
@@ -63,27 +83,7 @@
             transform: translateY(-2px);
             box-shadow: 0 5px 15px rgba(0, 242, 254, 0.3);
         }
-        .section-title {
-            text-align: center;
-            margin: 4rem 0 3rem;
-            color: white;
-        }
-        .section-title h1 {
-            font-size: 5rem;
-            margin-bottom: 1rem;
-            background: linear-gradient(45deg, #fff, #00f2fe);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            line-height: 1.2;
-        }
-        .section-title p {
-            font-size: 2.2rem;
-            color: rgba(255, 255, 255, 0.7);
-            max-width: 800px;
-            margin: 0 auto;
-            line-height: 1.4;
-        }
-        @media (max-width: 768px) {
+        @media (max-width: 900px) {
             .portfolio-grid {
                 grid-template-columns: 1fr;
             }
@@ -95,50 +95,6 @@
             .section-title p {
                 font-size: 1.6rem;
             }
-        }
-        /* Modal Styles */
-        .modal-overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.8);
-            z-index: 1000;
-            justify-content: center;
-            align-items: center;
-        }
-        .modal {
-            background: #1c1c1c;
-            padding: 20px;
-            border-radius: 10px;
-            width: 90%;
-            max-width: 1200px;
-            height: 80vh;
-            position: relative;
-        }
-        .modal iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-            border-radius: 8px;
-        }
-        .close-modal {
-            position: absolute;
-            top: -40px;
-            right: 0;
-            background: rgba(255, 255, 255, 0.1);
-            border: none;
-            color: white;
-            font-size: 1.6rem;
-            padding: 8px 16px;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        .close-modal:hover {
-            background: rgba(255, 255, 255, 0.2);
         }
         body {
             background: linear-gradient(135deg, #000000, #1a1a1a);
@@ -176,18 +132,27 @@
         <div class="portfolio-container">
             <div class="portfolio-grid">
                 <div class="ai-card">
-                    <h3>Introducing My Advanced Sentiment Analyzer—Your Gateway to Deeper Emotional Insights</h3>
-                    <p>Advanced Sentiment Analyzer is a cutting-edge AI tool that goes beyond mere positivity or negativity. Harnessing powerful NLP and machine learning techniques, this analyzer delves into complex emotional states, identifies potential risks, and offers actionable insights—all in real time. Additionally, it supports multiple languages and cultural contexts, enabling a global understanding of sentiments. Whether for business intelligence or enhancing customer satisfaction, it empowers strategic decision-making with comprehensive emotional analysis.</p>
+                    <h3>AI-Powered Personal Recommender System—Transforming User Engagement with AI-Driven Personalization</h3>
+                    <p>Our AI-Powered Personal Recommender System is an innovative solution that empowers businesses to connect with their customers through personalized recommendations. By leveraging advanced AI algorithms, it rapidly analyzes user preferences and delivers real-time, relevant content and product suggestions.</p>
+                    <p>Built with a modern, responsive design, the system supports a wide range of categories and boasts a scalable architecture designed to grow with your business. Thanks to robust error-handling features, services remain uninterrupted, ensuring a reliable and engaging user experience that drives customer satisfaction.</p>
+                    <a href="#" class="ai-card-cta" onclick="showPreview('https://shristyverse-personal-recommender0611.netlify.app/', 'AI-Powered Personal Recommender System'); return false;">Preview</a>
+                </div>
+                <div class="ai-card">
+                    <h3>Advanced Sentiment Analyzer—Your Gateway to Deeper Emotional Insights</h3>
+                    <p>Advanced Sentiment Analyzer is a cutting-edge AI tool that goes beyond merely detecting positivity or negativity. By harnessing powerful NLP and machine learning techniques, it uncovers nuanced emotional states, identifies potential risks, and provides actionable insights—all in real time.</p>
+                    <p>Additionally, it supports multiple languages and cultural contexts, making it a truly global solution for understanding sentiments. Whether you aim to refine business intelligence or elevate customer satisfaction, this analyzer empowers more informed decision-making through comprehensive emotional analysis..</p>
                     <a href="#" class="ai-card-cta" onclick="showPreview('https://shristyverse-sentiment-analyzer0611.netlify.app/', 'Advanced Sentiment Analyzer'); return false;">Preview</a>
                 </div>
                 <div class="ai-card">
-                    <h3>Introducing AI-Powered OCR—Advanced Text Extraction and Comprehensive Image Analysis</h3>
-                    <p>AI-Powered OCR is a cutting-edge solution that not only extracts text from images with exceptional speed and accuracy but also provides detailed image analysis by detecting objects and describing their contents. Leveraging advanced image recognition technologies and machine learning algorithms, this OCR tool handles a wide variety of image formats, including documents, photographs, and charts. Beyond text extraction, it delivers deep insights into image content, enhancing operational efficiency and optimizing data utilization.</p>
+                    <h3>AI-Powered OCR—Advanced Text Extraction and Comprehensive Image Analysis</h3>
+                    <p>AI-Powered OCR is a cutting-edge solution that not only extracts text from images with remarkable speed and precision but also provides in-depth image analysis by detecting objects and describing their details. Harnessing advanced image recognition technologies and machine learning algorithms, this OCR system effortlessly handles various image formats, including scanned documents, photographs, and charts.</p>
+                    <p>Beyond text extraction, AI-Powered OCR offers deep insights into image content, driving operational efficiency and unlocking new possibilities for data utilization. By combining robust detection capabilities with intelligent analysis, it enables businesses to streamline processes, make smarter decisions, and fully leverage the potential of their visual data.</p>
                     <a href="#" class="ai-card-cta" onclick="showPreview('https://shristyverse-advanced-ocr0611.netlify.app/', 'Advanced OCR'); return false;">Preview</a>
                 </div>
                 <div class="ai-card">
-                    <h3>Introducing Smart Agent—Your Personalized Advisor for Expert Guidance</h3>
-                    <p>Smart Agent is an intelligent chatbot platform featuring specialized advisor agents tailored to provide personalized guidance. Receive expert recommendations on food, health, travel, culture, and more from AI agents trained in specific domains. Experience tailored advice that seamlessly combines deep domain expertise with natural conversational abilities, enhancing your decision-making and enriching your user experience.</p>
+                    <h3>Smart Agent—Your Personalized Advisor for Expert Guidance</h3>
+                    <p>Smart Agent is an intelligent chatbot platform featuring specialized advisor agents, each trained to offer personalized recommendations. From food and health to travel and culture, these experts provide targeted insights to match your individual needs.</p>
+                    <p>By combining deep domain expertise with natural conversational abilities, Smart Agent delivers a truly tailored experience that helps you make more informed decisions. Enjoy a smoother journey through everyday choices while enriching your overall user experience with seamless AI-driven guidance.</p>
                     <a href="#" class="ai-card-cta" onclick="showPreview('https://shristyverse-smart-agent0611.netlify.app/', 'Smart Agent'); return false;">Preview</a>
                 </div>
             </div>
@@ -197,7 +162,9 @@
     <!-- Modal -->
     <div class="modal-overlay" id="modal-overlay">
         <div class="modal">
-            <button class="close-modal" onclick="closeModal()">Close</button>
+            <button class="modal-btn" onclick="closeModal()">
+                <i class="fas fa-times"></i>
+            </button>
             <iframe id="preview-iframe" src="" title="Preview"></iframe>
         </div>
     </div>
@@ -229,5 +196,7 @@
 
     <script src="js/plugins.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/modal.js"></script>
+    <script src="https://kit.fontawesome.com/3a9b2795f3.js" crossorigin="anonymous"></script>
 </body>
 </html>
