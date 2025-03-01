@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="ja" class="no-js">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AIスタジオ | Shristyverse</title>
+    <link rel="stylesheet" href="css/vendor.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/modal.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        .studio-container {
+            padding: 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+            min-height: calc(100vh - 80px);
+        }
+        .studio-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+        }
+        .studio-header i {
+            font-size: 2.5rem;
+            color: #00f2fe;
+        }
+        .studio-header h1 {
+            font-size: 3rem;
+            color: white;
+            margin: 0;
+        }
+        .studio-layout {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 2rem;
+            margin-top: 2rem;
+            min-height: 800px;
+        }
+        .solutions-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        .solution-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: 1px solid transparent;
+        }
+        .solution-card:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: #00f2fe;
+            transform: translateY(-2px);
+        }
+        .solution-card.active {
+            background: linear-gradient(45deg, rgba(0, 242, 254, 0.2), rgba(79, 172, 254, 0.2));
+            border-color: #00f2fe;
+        }
+        .solution-card-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+        .solution-card i {
+            font-size: 1.8rem;
+            color: #00f2fe;
+            margin-top: 0.2rem;
+        }
+        .solution-card h3 {
+            font-size: 1.8rem;
+            color: #00f2fe;
+            margin: 0;
+        }
+        .solution-card p {
+            font-size: 1.4rem;
+            color: rgba(255, 255, 255, 0.8);
+            margin: 0;
+            line-height: 1.4;
+        }
+        .preview-panel {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            overflow: hidden;
+            position: relative;
+        }
+        .preview-panel iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        .welcome-screen {
+            padding: 4rem 2rem;
+            text-align: center;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .welcome-screen i {
+            font-size: 4rem;
+            color: #00f2fe;
+            margin-bottom: 2rem;
+        }
+        .welcome-screen h2 {
+            font-size: 2.8rem;
+            color: white;
+            margin-bottom: 1rem;
+        }
+        .welcome-screen h3 {
+            font-size: 2rem;
+            color: #00f2fe;
+            margin-bottom: 2rem;
+        }
+        .welcome-screen p {
+            font-size: 1.6rem;
+            color: rgba(255, 255, 255, 0.8);
+            max-width: 600px;
+            margin: 0 auto 3rem;
+            line-height: 1.6;
+        }
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            max-width: 600px;
+            width: 100%;
+        }
+        .feature-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 1.5rem;
+            border-radius: 8px;
+            font-size: 1.4rem;
+            color: rgba(255, 255, 255, 0.9);
+        }
+        @media (max-width: 1200px) {
+            .studio-layout {
+                grid-template-columns: 1fr;
+            }
+            .preview-panel {
+                min-height: 600px;
+            }
+        }
+        body {
+            background: linear-gradient(135deg, #0f172a, #1e293b);
+        }
+    </style>
+</head>
+<body>
+    <header class="s-header" style="position: fixed; top: 0; width: 100%; background-image: linear-gradient(to bottom, rgba(0,0,0,0.9), rgba(0,0,0,0.9));">
+        <div class="row s-header__inner width-sixteen-col">
+            <div class="s-header__block">
+                <div class="s-header__logo">
+                    <a class="logo" href="index_ja.html">
+                        <img src="images/logo.svg" alt="ホームページ">
+                    </a>
+                </div>
+                <a class="s-header__menu-toggle" href="#0"><span>メニュー</span></a>
+            </div>
+            <nav class="s-header__nav">
+                <ul class="flex space-x-1 md:space-x-4 text-sm font-medium">
+                    <li><a href="web_development_ja.html" class="text-gray-300 hover:text-white transition-colors duration-200">ウェブ開発</a></li>
+                    <li><a href="ai_solutions_ja.html" class="text-gray-300 hover:text-white transition-colors duration-200">AIソリューション</a></li>
+                    <li><a href="index_ja.html#about" class="text-gray-300 hover:text-white transition-colors duration-200">当社について</a></li>
+                    <li><a href="index_ja.html#contact" class="text-gray-300 hover:text-white transition-colors duration-200">お問い合わせ</a></li>
+                    <li><a href="ai-studio.html" class="text-gray-300 hover:text-white transition-colors duration-200">ENGLISH</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <main style="padding-top: 80px;">
+        <div class="studio-container">
+            <div class="studio-header">
+                <i class="fas fa-brain"></i>
+                <div>
+                    <h1>AIスタジオ</h1>
+                    <p style="color: rgba(255, 255, 255, 0.7); font-size: 1.6rem; margin: 0;">エンタープライズ向け先進的AIソリューション</p>
+                </div>
+            </div>
+
+            <div class="studio-layout">
+                <div class="solutions-list">
+                    <div class="solution-card" onclick="showPreview('https://shristyverse-advanced-ocr0611.netlify.app/', '高度OCRプラットフォーム')">
+                        <div class="solution-card-header">
+                            <i class="fas fa-file-search"></i>
+                            <div>
+                                <h3>高度OCRプラットフォーム</h3>
+                                <p>画像や文書を高精度で編集可能な検索可能なテキストに変換</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="solution-card" onclick="showPreview('https://shristyverse-smart-agent0611.netlify.app/', 'スマートエージェントチャットボット')">
+                        <div class="solution-card-header">
+                            <i class="fas fa-robot"></i>
+                            <div>
+                                <h3>スマートエージェントチャットボット</h3>
+                                <p>文脈と意図を理解するインテリジェントな対話AI</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="solution-card" onclick="showPreview('https://shristyverse-sentiment-analyzer0611.netlify.app/', '高度感情分析システム')">
+                        <div class="solution-card-header">
+                            <i class="fas fa-chart-bar"></i>
+                            <div>
+                                <h3>高度感情分析システム</h3>
+                                <p>テキストとSNSのための深層学習による感情分析</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="solution-card" onclick="showPreview('https://shristyverse-personal-recommender0611.netlify.app/', '高度パーソナライズド推薦システム')">
+                        <div class="solution-card-header">
+                            <i class="fas fa-bullseye"></i>
+                            <div>
+                                <h3>高度パーソナライズド推薦システム</h3>
+                                <p>高度な機械学習アルゴリズムを使用したパーソナライズされた推薦</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="preview-panel">
+                    <div class="welcome-screen" id="welcome-screen">
+                        <i class="fas fa-sparkles"></i>
+                        <h2>AIスタジオへようこそ</h2>
+                        <h3>エンタープライズAIソリューションへの入り口</h3>
+                        <p>ビジネスを変革するための先進的なAIソリューションをご覧ください。左パネルから任意のソリューションを選択して始めましょう。</p>
+                        <div class="features-grid">
+                            <div class="feature-card">最先端のAI技術</div>
+                            <div class="feature-card">エンタープライズグレードのセキュリティ</div>
+                            <div class="feature-card">スケーラブルなソリューション</div>
+                            <div class="feature-card">リアルタイム処理</div>
+                        </div>
+                    </div>
+                    <iframe id="preview-frame" style="display: none;"></iframe>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        function showPreview(url, title) {
+            const welcomeScreen = document.getElementById('welcome-screen');
+            const previewFrame = document.getElementById('preview-frame');
+            const cards = document.querySelectorAll('.solution-card');
+            
+            // Update active state of cards
+            cards.forEach(card => {
+                if (card.querySelector('h3').textContent === title) {
+                    card.classList.add('active');
+                } else {
+                    card.classList.remove('active');
+                }
+            });
+
+            // Show preview
+            welcomeScreen.style.display = 'none';
+            previewFrame.style.display = 'block';
+            previewFrame.src = url;
+        }
+    </script>
+
+    <script src="js/plugins.js"></script>
+    <script src="js/main.js"></script>
+    <script src="https://kit.fontawesome.com/3a9b2795f3.js" crossorigin="anonymous"></script>
+</body>
+</html> 

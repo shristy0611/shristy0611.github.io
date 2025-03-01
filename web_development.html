@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Web Development Services | Shristyverse</title>
+    <link rel="stylesheet" href="css/vendor.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/modal.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        /* Hero Section Styles */
+        .hero-section {
+            position: relative;
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background: linear-gradient(135deg, #0A192F, #112240, #1A365D);
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            padding: 2rem;
+        }
+        
+        .particles-js {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            background: radial-gradient(circle at center, rgba(10, 25, 47, 0), rgba(10, 25, 47, 0.8));
+        }
+        
+        .hero-title {
+            font-size: 5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, #fff, #00f2fe);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1.2;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+        
+        .hero-description {
+            font-size: 2.2rem;
+            color: rgba(255, 255, 255, 0.7);
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.4;
+        }
+
+        .solution-section {
+            padding: 6rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .solution-section:last-child {
+            border-bottom: none;
+        }
+        
+        .solution-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .solution-content.reverse {
+            direction: rtl;
+        }
+        
+        .solution-content.reverse .solution-text {
+            direction: ltr;
+        }
+        
+        .solution-text {
+            padding: 2rem;
+        }
+        
+        .solution-text h2 {
+            font-size: 3.2rem;
+            color: #00f2fe;
+            margin-bottom: 2rem;
+            line-height: 1.2;
+        }
+        
+        .solution-text p {
+            font-size: 1.8rem;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+        
+        .solution-features {
+            list-style: none;
+            padding: 0;
+            margin: 2rem 0;
+        }
+        
+        .solution-features li {
+            font-size: 1.6rem;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .solution-features li i {
+            color: #00f2fe;
+            margin-right: 1rem;
+            font-size: 1.4rem;
+        }
+        
+        .preview-btn {
+            display: inline-flex;
+            align-items: center;
+            padding: 1.5rem 3rem;
+            background: linear-gradient(45deg, #00f2fe, #4facfe);
+            border: none;
+            border-radius: 8px;
+            color: white;
+            font-size: 1.8rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            margin-top: 2rem;
+        }
+        
+        .preview-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 242, 254, 0.3);
+        }
+        
+        .preview-btn i {
+            margin-left: 1rem;
+        }
+        
+        .preview-container {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            overflow: hidden;
+            aspect-ratio: 16/9;
+            position: relative;
+            cursor: default;
+        }
+        
+        .preview-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 16px;
+            pointer-events: none;
+        }
+        
+        .preview-container:hover {
+            overflow-y: auto;
+        }
+        
+        .preview-container::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        .preview-container::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.05);
+        }
+        
+        .preview-container::-webkit-scrollbar-thumb {
+            background: rgba(0, 242, 254, 0.3);
+            border-radius: 4px;
+        }
+        
+        .preview-container::-webkit-scrollbar-thumb:hover {
+            background: rgba(0, 242, 254, 0.5);
+        }
+
+        @media (max-width: 1024px) {
+            .solution-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            .solution-content.reverse {
+                direction: ltr;
+            }
+            .solution-text {
+                padding: 0;
+            }
+            .hero-title {
+                font-size: 4rem;
+            }
+            .solution-text h2 {
+                font-size: 2.8rem;
+            }
+        }
+        
+        @media (max-width: 600px) {
+            .hero-title {
+                font-size: 3rem;
+            }
+            .hero-description {
+                font-size: 1.6rem;
+            }
+        }
+        
+        body {
+            background: linear-gradient(135deg, #000000, #1a1a1a);
+        }
+
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 10px rgba(0, 242, 254, 0.2),
+                           0 0 20px rgba(0, 242, 254, 0.2),
+                           0 0 30px rgba(0, 242, 254, 0.2);
+            }
+            to {
+                text-shadow: 0 0 20px rgba(0, 242, 254, 0.4),
+                           0 0 30px rgba(0, 242, 254, 0.4),
+                           0 0 40px rgba(0, 242, 254, 0.4);
+            }
+        }
+
+        .preview-container {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .example-sites {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: grid;
+            grid-template-rows: repeat(3, 1fr);
+            gap: 1rem;
+            padding: 1rem;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            background: rgba(10, 25, 47, 0.9);
+        }
+        
+        .preview-container:hover .example-sites {
+            opacity: 1;
+        }
+        
+        .example-sites img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+        
+        .example-sites img:hover {
+            transform: scale(1.05);
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+</head>
+<body>
+    <header class="s-header" style="position: fixed; top: 0; width: 100%; background-image: linear-gradient(to bottom, rgba(0,0,0,0.9), rgba(0,0,0,0.9));">
+        <div class="row s-header__inner width-sixteen-col">
+            <div class="s-header__block">
+                <div class="s-header__logo">
+                    <a class="logo" href="index.html">
+                        <img src="images/logo.svg" alt="Homepage">
+                    </a>
+                </div>
+                <a class="s-header__menu-toggle" href="#0"><span>Menu</span></a>
+            </div>
+            <nav class="s-header__nav">
+                <ul class="flex space-x-1 md:space-x-4 text-sm font-medium">
+                    <li><a href="web_development.html" class="text-gray-300 hover:text-white transition-colors duration-200">Web Development</a></li>
+                    <li><a href="ai_solutions.html" class="text-gray-300 hover:text-white transition-colors duration-200">AI Solutions</a></li>
+                    <li><a href="index.html#about" class="text-gray-300 hover:text-white transition-colors duration-200">About Us</a></li>
+                    <li><a href="index.html#contact" class="text-gray-300 hover:text-white transition-colors duration-200">Contact</a></li>
+                    <li><a href="web_development_ja.html" class="text-gray-300 hover:text-white transition-colors duration-200">日本語</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main style="padding-top: 80px;">
+        <section class="hero-section">
+            <div id="particles-js" class="particles-js"></div>
+            <div class="hero-content">
+                <h1 class="hero-title">Web Development Services</h1>
+                <p class="hero-description">Crafting digital experiences that transform ideas into powerful, scalable web solutions</p>
+            </div>
+        </section>
+
+        <section class="solution-section">
+            <div class="solution-content">
+                <div class="solution-text">
+                    <h2>E-Commerce Solutions</h2>
+                    <p>Transform your business with our cutting-edge e-commerce solutions. We create seamless online shopping experiences that drive conversions and grow your revenue.</p>
+                    <ul class="solution-features">
+                        <li><i class="fas fa-check"></i> Custom shopping cart and checkout process</li>
+                        <li><i class="fas fa-check"></i> Secure payment gateway integration</li>
+                        <li><i class="fas fa-check"></i> Inventory management system</li>
+                        <li><i class="fas fa-check"></i> Mobile-responsive design</li>
+                        <li><i class="fas fa-check"></i> Analytics and reporting dashboard</li>
+                    </ul>
+                    <div class="button-group">
+                        <a href="index.html#contact" class="preview-btn">Contact for Development <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="preview-container">
+                    <img src="images/examples/zozo-example.jpg" alt="E-Commerce Example - ZOZO" style="pointer-events: none;">
+                </div>
+            </div>
+        </section>
+
+        <section class="solution-section">
+            <div class="solution-content reverse">
+                <div class="solution-text">
+                    <h2>Corporate Websites</h2>
+                    <p>Establish a powerful online presence with our professional corporate website solutions. We create sophisticated, brand-aligned websites that reflect your company's values and goals.</p>
+                    <ul class="solution-features">
+                        <li><i class="fas fa-check"></i> Professional, modern design</li>
+                        <li><i class="fas fa-check"></i> Content management system</li>
+                        <li><i class="fas fa-check"></i> SEO optimization</li>
+                        <li><i class="fas fa-check"></i> Multi-language support</li>
+                        <li><i class="fas fa-check"></i> Integration with business tools</li>
+                    </ul>
+                    <div class="button-group">
+                        <a href="index.html#contact" class="preview-btn">Contact for Development <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="preview-container">
+                    <img src="images/examples/pienso-example.jpg" alt="Corporate Website Example - Pienso" style="pointer-events: none;">
+                </div>
+            </div>
+        </section>
+
+        <section class="solution-section">
+            <div class="solution-content">
+                <div class="solution-text">
+                    <h2>Portfolio & Creative Websites</h2>
+                    <p>Showcase your work with stunning portfolio websites that capture attention and leave lasting impressions. Perfect for artists, photographers, designers, and creative professionals.</p>
+                    <ul class="solution-features">
+                        <li><i class="fas fa-check"></i> Creative, unique designs</li>
+                        <li><i class="fas fa-check"></i> Interactive galleries</li>
+                        <li><i class="fas fa-check"></i> Smooth animations</li>
+                        <li><i class="fas fa-check"></i> Project categorization</li>
+                        <li><i class="fas fa-check"></i> Social media integration</li>
+                    </ul>
+                    <div class="button-group">
+                        <a href="index.html#contact" class="preview-btn">Contact for Development <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="preview-container">
+                    <img src="images/examples/28k-example.jpg" alt="Portfolio Website Example - 28k Studio" style="pointer-events: none;">
+                </div>
+            </div>
+        </section>
+
+        <section class="solution-section">
+            <div class="solution-content reverse">
+                <div class="solution-text">
+                    <h2>Web Applications</h2>
+                    <p>Build powerful, scalable web applications that solve complex business challenges. From project management tools to custom CRM systems, we create solutions that streamline your operations.</p>
+                    <ul class="solution-features">
+                        <li><i class="fas fa-check"></i> Custom functionality development</li>
+                        <li><i class="fas fa-check"></i> Real-time data processing</li>
+                        <li><i class="fas fa-check"></i> User authentication & authorization</li>
+                        <li><i class="fas fa-check"></i> API development & integration</li>
+                        <li><i class="fas fa-check"></i> Cloud deployment & scaling</li>
+                    </ul>
+                    <div class="button-group">
+                        <a href="index.html#contact" class="preview-btn">Contact for Development <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="preview-container">
+                    <img src="images/examples/vjw-example.jpg" alt="Web Application Example - Visit Japan Web" style="pointer-events: none;">
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            particlesJS('particles-js', {
+                particles: {
+                    number: {
+                        value: 30,
+                        density: {
+                            enable: true,
+                            value_area: 800
+                        }
+                    },
+                    color: {
+                        value: ['#00f2fe', '#4facfe', '#00f2fe']
+                    },
+                    shape: {
+                        type: ['circle', 'triangle', 'edge', 'polygon'],
+                        stroke: {
+                            width: 1,
+                            color: '#00f2fe'
+                        },
+                        polygon: {
+                            nb_sides: 6
+                        },
+                        character: {
+                            value: ['</>','{}', '[]', '()', '&&', '||', '==', '=>', '+=', '*='],
+                            font: 'Consolas',
+                            style: '',
+                            weight: 'normal'
+                        }
+                    },
+                    opacity: {
+                        value: 0.6,
+                        random: true,
+                        animation: {
+                            enable: true,
+                            speed: 1,
+                            opacity_min: 0.1,
+                            sync: false
+                        }
+                    },
+                    size: {
+                        value: 6,
+                        random: true,
+                        animation: {
+                            enable: true,
+                            speed: 2,
+                            size_min: 0.1,
+                            sync: false
+                        }
+                    },
+                    line_linked: {
+                        enable: true,
+                        distance: 150,
+                        color: '#00f2fe',
+                        opacity: 0.3,
+                        width: 1,
+                        triangles: {
+                            enable: true,
+                            opacity: 0.1,
+                            color: '#00f2fe'
+                        }
+                    },
+                    move: {
+                        enable: true,
+                        speed: 1.5,
+                        direction: 'none',
+                        random: true,
+                        straight: false,
+                        out_mode: 'bounce',
+                        bounce: true,
+                        attract: {
+                            enable: true,
+                            rotateX: 600,
+                            rotateY: 1200
+                        }
+                    }
+                },
+                interactivity: {
+                    detect_on: 'canvas',
+                    events: {
+                        onhover: {
+                            enable: true,
+                            mode: 'grab'
+                        },
+                        onclick: {
+                            enable: true,
+                            mode: 'push'
+                        },
+                        resize: true
+                    },
+                    modes: {
+                        grab: {
+                            distance: 140,
+                            line_linked: {
+                                opacity: 0.6
+                            }
+                        },
+                        push: {
+                            particles_nb: 2
+                        }
+                    }
+                },
+                retina_detect: true
+            });
+        });
+    </script>
+
+    <script src="js/plugins.js"></script>
+    <script src="js/main.js"></script>
+    <script src="https://kit.fontawesome.com/3a9b2795f3.js" crossorigin="anonymous"></script>
+</body>
+</html>
